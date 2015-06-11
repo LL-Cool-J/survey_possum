@@ -4,10 +4,9 @@ class Survey < ActiveRecord::Base
   has_many :questions
   has_many :submissions
 
-  accepts_nested_attributes_for :questions
+  accepts_nested_attributes_for :questions, allow_destroy: true
 
   validates :author_id, presence: true
   validates :title, presence: true
-  validates :published, presence: true
 
 end
