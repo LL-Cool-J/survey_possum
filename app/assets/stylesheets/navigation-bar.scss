@@ -12,13 +12,11 @@
     transform: translateY(-50%);
     display: inline-block;
     text-decoration: none;
-    font-size: 1rem;
-    color: #40464C;
     background-color: #00B479;
+    color: #40464C;
     height: 2rem;
     width: 7rem;
     text-align: center;
-    font-weight: bold;
     
     &:hover,
     &:focus {
@@ -27,6 +25,12 @@
     }
   }
   
+    .navigation-bar-home {
+      font-size: 1rem;
+      font-weight: bold;
+      line-height: 2rem;
+    }
+  
   .navigation-bar-link-new {
     position: absolute;
     top: 50%;
@@ -34,13 +38,11 @@
     transform: translateY(-50%);
     display: inline-block;
     text-decoration: none;
-    font-size: 1rem;
-    color: #40464C;
     background-color: #00B479;
+    color: #40464C;
     height: 2rem;
     width: 7rem;
     text-align: center;
-    font-weight: bold;
     
     &:hover,
     &:focus {
@@ -48,3 +50,9 @@
       color: #00B479;
     }
   }
+  
+    .navigation-bar-new {
+      font-size: 1rem;
+      font-weight: bold;
+      line-height: 2rem;
+    }
