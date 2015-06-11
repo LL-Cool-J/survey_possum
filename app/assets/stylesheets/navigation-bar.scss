@@ -2,5 +2,49 @@
   position: relative;
   width: 100%;
   height: 4rem;
-  background-color: #A4D1B8
+  background-color: #A4D1B8;
 }
+
+  .navigation-bar-link-home {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #40464C;
+    background-color: #00B479;
+    height: 2rem;
+    width: 7rem;
+    text-align: center;
+    font-weight: bold;
+    
+    &:hover,
+    &:focus {
+      background-color: #40464C;
+      color: #00B479;
+    }
+  }
+  
+  .navigation-bar-link-new {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #40464C;
+    background-color: #00B479;
+    height: 2rem;
+    width: 7rem;
+    text-align: center;
+    font-weight: bold;
+    
+    &:hover,
+    &:focus {
+      background-color: #40464C;
+      color: #00B479;
+    }
+  }
