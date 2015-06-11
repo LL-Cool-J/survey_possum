@@ -7,6 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  
+  <nav class="navigation-bar">
+    <%= link_to 'Home', surveys_path, class: "navigation-bar-link-home" %>
+    <%= link_to 'Create New', new_survey_path, class: "navigation-bar-link-new" %>
+  </nav>
 
 <%= yield %>
 
