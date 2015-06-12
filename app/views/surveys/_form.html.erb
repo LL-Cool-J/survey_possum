@@ -29,6 +29,10 @@
   </div>
     <%= f.fields_for :questions do |ff| %>
       <div class="field">
+        <%= ff.label :question_number %><br>
+        <%= ff.text_field :order_number %>
+      </div>
+      <div class="field">
         <%= ff.label :question %><br>
         <%= ff.text_field :question_text %>
       </div>

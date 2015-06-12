@@ -1,9 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Id:</strong>
-  <%= @survey.id %>
-</p>
 
 <p>
   <strong>Author:</strong>
@@ -19,6 +15,29 @@
   <strong>Description:</strong>
   <%= @survey.description %>
 </p>
+
+<p>
+  <strong>Published?:</strong>
+  <%= @survey.published %>
+</p>
+
+<br>
+
+<table>
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= question.order_number %>: </td>
+        <td><%= question.question_text %></td>
+        <td>(info)<%= question.question_info %></td>
+        <td>Type: <%= question.question_type %></td>
+        <td>Required?<%= question.required %>></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
 
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
 <%= link_to 'Back', surveys_path %>
