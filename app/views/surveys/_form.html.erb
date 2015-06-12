@@ -11,46 +11,50 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :author_id %><br>
-    <%= f.number_field :author_id %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :survey_description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :published? %>
-    <%= f.check_box :published %>
-  </div>
-    <%= f.fields_for :questions do |ff| %>
-      <div>Question <%= ff.index + 1 %> </div>
-      <%= ff.hidden_field :order_number, :value => (ff.index + 1)  %>
-      <div class="field">
-        <%= ff.text_field :question_text %>
+  <div class="survey-edit-container">
+    <div class="field survey-edit-author">
+      <%= f.label :author_id %><br>
+      <%= f.number_field :author_id %>
+    </div>
+    <div class="field survey-edit-title">
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field survey-edit-description">
+      <%= f.label :survey_description %><br>
+      <%= f.text_area :description %>
+    </div>
+    <div class="field survey-edit-question-container">
+      <%= f.label :published? %>
+      <%= f.check_box :published %>
+    </div>
+      <%= f.fields_for :questions do |ff| %>
+        <div class="field survey-edit-question-num">
+          Question <%= ff.index + 1 %>
+          <%= ff.hidden_field :order_number, :value => (ff.index + 1)  %>
+        </div>
+        <div class="field survey-edit-question">
+          <%= ff.text_field :question_text %>
+        </div>
+        <div class="field survey-edit-question-description">
+          <%= ff.label :description %> (optional)<br>
+          <%= ff.text_area :question_info %>
+        </div>
+        <div class="field survey-edit-question-type">
+          <%= ff.label :question_type %><br>
+          <%= ff.select :question_type, options_for_select(["", "Text - Short", "Text - Long", "Yes or No", "Checkbox"]) %>
+        </div>
+        <div class="field survey-edit-question-required">
+          <%= ff.label :required? %><br>
+          <%= ff.check_box :required %>
+        </div>
+        <div>
+          <%= ff.label :_destroy, "Delete" %>
+          <%= ff.check_box :_destroy %>
+        </div>
+      <% end %>
+      <div class="actions">
+        <%= f.submit %>
       </div>
-      <div class="field">
-        <%= ff.label :description %> (optional)<br>
-        <%= ff.text_area :question_info %>
-      </div>
-      <div class="field">
-        <%= ff.label :question_type %><br>
-        <%= ff.select :question_type, options_for_select(["", "Text - Short", "Text - Long", "Yes or No", "Checkbox"]) %>
-      </div>
-      <div class="field">
-        <%= ff.label :required? %><br>
-        <%= ff.check_box :required %>
-      </div>
-      <div>
-        <%= ff.label :_destroy, "Delete" %>
-        <%= ff.check_box :_destroy %>
-      </div>
-    <% end %>
-  <div class="actions">
-    <%= f.submit %>
   </div>
 <% end %>
