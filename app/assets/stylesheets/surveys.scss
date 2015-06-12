@@ -8,30 +8,6 @@
   width: 80%;
 }
 
-
-body * {
-  box-sizing: border-box;
-  background-color: #FBFBFA;
-  color: #40464C;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-}
-
-div {
-  margin: 1rem;
-}
-
-.navigation-bar {
-  display: block;
-  width: 100%;
-  position: fixed;
-  background-color: #A4D1B8;
-  height: 5rem;
-  font-weight: 700;
-  top: 0;
-  z-index: 1;
-}
-
 .survey-edit-wrapper {
   display: block;
   text-align: left;
