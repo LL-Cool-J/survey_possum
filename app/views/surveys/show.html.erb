@@ -23,19 +23,25 @@
 
 <br>
 
-<table>
-  <tbody>
-    <% @questions.each do |question| %>
-      <tr>
-        <td><%= question.order_number %>: </td>
-        <td><%= question.question_text %></td>
-        <td>(info)<%= question.question_info %></td>
-        <td>Type: <%= question.question_type %></td>
-        <td>Required?<%= question.required %>></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
+<% @questions.each do |question| %>
+  <div><%= "*" if question.required %><%= question.order_number %>: <%= question.question_text %></div>
+  <% if question.question_info %>
+    <div><%= question.question_info %></div>
+  <% end %>
+  <% if question.question_type == "Text - Short" %>
+    <div><input type="text"></div>
+  <% elsif question.question_type == "Text - Long" %>
+    <div><textarea rows="4" cols="50"></textarea></div>
+  <% elsif question.question_type == "Yes or No" %>
+    <div><input type ="radio" name="choice" value="Yes">Yes<input type ="radio" name="choice" value="No">No</div>
+  <% else %>
+    <div><input type="checkbox"></div>
+  <% end %>
+<% end %>
+
+<div><button type="submit">Submit</button></div>
+
 
 
 
