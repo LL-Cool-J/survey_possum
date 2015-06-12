@@ -25,7 +25,7 @@
 
 
 <% @questions.each do |question| %>
-  <div><%= "*" if question.required %><%= question.order_number %>: <%= question.question_text %></div>
+  <div><%= "*" if question.required %><%= question.order_number %>. <%= question.question_text %></div>
   <% if question.question_info %>
     <div><%= question.question_info %></div>
   <% end %>
