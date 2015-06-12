@@ -7,12 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
+
   <nav class="navigation-bar">
-    <%= link_to surveys_path, class: "navigation-bar-link-home" do %>
+    <%= link_to root_path, class: "navigation-bar-link-home" do %>
       <span class="navigation-bar-home">Home</span>
     <% end %>
-      
+
     <%= link_to new_survey_path, class: "navigation-bar-link-new" do %>
       <span class="navigation-bar-new">Create New</span>
     <% end %>
