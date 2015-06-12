@@ -5,7 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Id</th>
       <th>Author</th>
       <th>Title</th>
       <th>Description</th>
@@ -16,7 +15,6 @@
   <tbody>
     <% @surveys.each do |survey| %>
       <tr>
-        <td><%= survey.id %></td>
         <td><%= survey.author_id %></td>
         <td><%= survey.title %></td>
         <td><%= survey.description %></td>

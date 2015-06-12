@@ -29,6 +29,10 @@
   </div>
     <%= f.fields_for :questions do |ff| %>
       <div class="field">
+        <%= ff.label :question_number %><br>
+        <%= ff.text_field :order_number %>
+      </div>
+      <div class="field">
         <%= ff.label :question %><br>
         <%= ff.text_field :question_text %>
       </div>
@@ -38,7 +42,7 @@
       </div>
       <div class="field">
         <%= ff.label :question_type %><br>
-        <%= ff.text_field :question_type %>
+        <%= ff.select :question_type, options_for_select(["", "Text - Short", "Text - Long", "True/False"]) %>
       </div>
       <div class="field">
         <%= ff.label :required? %><br>
