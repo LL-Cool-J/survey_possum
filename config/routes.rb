@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  root 'dashboard#home'
+  get 'dashboard/home'
+  get 'home' => 'dashboard#home'
+
   resources :surveys
   resources :authors
   # The priority is based upon order of creation: first created -> highest priority.
