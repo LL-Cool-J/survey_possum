@@ -46,7 +46,7 @@
       </div>
       <div class="field">
         <%= ff.label :required? %><br>
-        <%= ff.select :question_type, options_for_select(["", "Yes", "No"]) %>
+        <%= ff.check_box :required %>
       </div>
       <div>
         <%= ff.label :_destroy, "Delete" %>
