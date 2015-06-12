@@ -72,6 +72,6 @@ class SurveysController < ApplicationController
     def survey_params
       params.require(:survey).permit(:author_id, :title, :description, :published,
           questions_attributes: [:id, :question_text, :question_info, :question_type,
-          :required, :order_number])
+          :required, :order_number, :_destroy])
     end
 end
