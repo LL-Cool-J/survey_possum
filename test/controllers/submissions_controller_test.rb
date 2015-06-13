@@ -3,6 +3,8 @@ require 'test_helper'
 class SubmissionsControllerTest < ActionController::TestCase
   setup do
     @submission = submissions(:one)
+    @answer = answers(:one)
+    @question = questions(:one)
   end
 
   test "should get index" do
@@ -24,6 +26,15 @@ class SubmissionsControllerTest < ActionController::TestCase
     assert_redirected_to submission_path(assigns(:submission))
   end
 
+  test "should create answers withsubmission" do
+    assert_difference('Answer.count') do
+      post :create, submission: { survey_id: @submission.survey_id,
+          answers_attributes: [question_id: @question.id, response: @answer.response]}
+    end
+
+    assert_redirected_to submission_path(assigns(:submission))
+  end
+
   test "should show submission" do
     get :show, id: @submission
     assert_response :success
@@ -38,7 +49,7 @@ class SubmissionsControllerTest < ActionController::TestCase
   # end
   #
   # test "should update submission" do
-  #   patch :update, id: @submission, submission: { email: Faker::Internet.email, first_name: @submission.first_name, last_name: @submission.last_name, password_digest: "password" }
+  #   patch :update, id: @submission, submission: { survey_id: @submission.survey_id }
   #   assert_redirected_to submission_path(assigns(:submission))
   # end
 
