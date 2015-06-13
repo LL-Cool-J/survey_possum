@@ -9,10 +9,9 @@ class SubmissionsController < ApplicationController
 
   # GET /submissions/1
   # GET /submissions/1.json
-  # def show
-  #   @questions = @submission.questions
-  #   @submission = Submission.new
-  # end
+  def show
+    @questions = @submission.questions
+  end
 
   # GET /submissions/new
   def new
@@ -27,7 +26,6 @@ class SubmissionsController < ApplicationController
   # POST /submissions.json
   def create
     @submission = Submission.new(submission_params)
-
     respond_to do |format|
       if @submission.save
         format.html { redirect_to @submission, notice: 'Submission was successfully created.' }

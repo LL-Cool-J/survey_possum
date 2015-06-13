@@ -24,7 +24,7 @@
 <br>
 
 <%= form_for(@submission) do |f| %>
-
+<%= f.hidden_field :survey_id, :value => @survey.id %>
   <% @questions.each do |question| %>
     <div><%= "*" if question.required %><%= question.order_number %>. <%= question.question_text %></div>
     <% if question.question_info %>
@@ -32,20 +32,19 @@
     <% end %>
       <%= f.fields_for :answers do |ff| %>
         <% if question.question_type == "Text - Short" %>
-          <div><%= ff.text_field :response %>HI</div>
+          <div><%= ff.text_field :response %></div>
         <% elsif question.question_type == "Text - Long" %>
           <div><%= ff.text_area :response %></div>
         <% elsif question.question_type == "Yes or No" %>
-          <div><%= ff.radio_button :response, 'choice' %>
+          <div><%= ff.radio_button :response, true %>
           <%= ff.label :response, 'Yes', :value => true %>
-          <%= ff.radio_button :response, 'choice' %>
-          <%= ff.label :response, 'No', :value => false %>HI</div
+          <%= ff.radio_button :response, false%>
+          <%= ff.label :response, 'No', :value => false %></div>
         <% else %>
-          <div><%= ff.check_box :response %>HI</div>
+          <div><%= ff.check_box :response %></div>
         <% end %>
       <% end %>
   <% end %>
-
   <div><%= f.submit "Submit" %></div>
 <% end %>
 
