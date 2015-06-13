@@ -4,6 +4,7 @@ class SurveysControllerTest < ActionController::TestCase
   setup do
     @survey = surveys(:one)
     @author = authors(:one)
+    @question = questions(:one)
   end
 
   test "should get index" do
@@ -19,11 +20,24 @@ class SurveysControllerTest < ActionController::TestCase
 
   test "should create survey" do
     assert_difference('Survey.count') do
-      post :create, survey: { author_id: @author.id, description: @survey.description, title: @survey.title, published: true}
+      post :create, survey: { author_id: @author.id, description: @survey.description,
+          title: @survey.title, published: true}
     end
 
     assert_redirected_to survey_path(assigns(:survey))
   end
+
+  test "should create survey with questions" do
+    assert_difference('Question.count') do
+      post :create, survey: { author_id: @author.id, description: @survey.description,
+          title: @survey.title, published: true, questions_attributes:
+          [question_text: @question.question_text, question_info: @question.question_info,
+          question_type: @question.question_type, required: false, order_number: 1] }
+    end
+
+    assert_redirected_to survey_path(assigns(:survey))
+  end
+
 
   test "should show survey" do
     get :show, id: @survey
@@ -35,8 +49,11 @@ class SurveysControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should update survey" do
-    patch :update, id: @survey, survey: { author_id: @author.id, description: @survey.description, title: @survey.title, published: true}
+  test "should update survey and questions" do
+    patch :update, id: @survey, survey: { author_id: @author.id, description: @survey.description,
+        title: @survey.title, published: true,  questions_attributes:
+        [question_text: @question.question_text, question_info: @question.question_info,
+        question_type: @question.question_type, required: false, order_number: 1]}
     assert_redirected_to survey_path(assigns(:survey))
   end
 
