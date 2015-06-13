@@ -10,7 +10,7 @@ class SubmissionsController < ApplicationController
   # GET /submissions/1
   # GET /submissions/1.json
   def show
-    @questions = @submission.questions
+    @answers = @submission.answers
   end
 
   # GET /submissions/new

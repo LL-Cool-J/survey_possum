@@ -31,6 +31,7 @@
       <div><%= question.question_info %></div>
     <% end %>
       <%= f.fields_for :answers do |ff| %>
+        <%= ff.hidden_field :question_id, :value => question.id %>
         <% if question.question_type == "Text - Short" %>
           <div><%= ff.text_field :response %></div>
         <% elsif question.question_type == "Text - Long" %>

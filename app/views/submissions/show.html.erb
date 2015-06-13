@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<%= @answers.map {|a| a.question_id} %>
+<%= @answers.map {|a| a.response} %>
+<%= @answers.map {|a| a.submission_id} %>
+
+<%= link_to "Submissions", submissions_path %>
