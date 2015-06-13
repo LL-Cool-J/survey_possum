@@ -23,24 +23,31 @@
 
 <br>
 
-
-<% @questions.each do |question| %>
-  <div><%= "*" if question.required %><%= question.order_number %>. <%= question.question_text %></div>
-  <% if question.question_info %>
-    <div><%= question.question_info %></div>
+<%= form_for(@submission) do |f| %>
+<%= f.hidden_field :survey_id, :value => @survey.id %>
+  <% @questions.each do |question| %>
+    <div><%= "*" if question.required %><%= question.order_number %>. <%= question.question_text %></div>
+    <% if question.question_info %>
+      <div><%= question.question_info %></div>
+    <% end %>
+      <%= f.fields_for :answers do |ff| %>
+        <%= ff.hidden_field :question_id, :value => question.id %>
+        <% if question.question_type == "Text - Short" %>
+          <div><%= ff.text_field :response %></div>
+        <% elsif question.question_type == "Text - Long" %>
+          <div><%= ff.text_area :response %></div>
+        <% elsif question.question_type == "Yes or No" %>
+          <div><%= ff.radio_button :response, true %>
+          <%= ff.label :response, 'Yes', :value => true %>
+          <%= ff.radio_button :response, false%>
+          <%= ff.label :response, 'No', :value => false %></div>
+        <% else %>
+          <div><%= ff.check_box :response %></div>
+        <% end %>
+      <% end %>
   <% end %>
-  <% if question.question_type == "Text - Short" %>
-    <div><input type="text"></div>
-  <% elsif question.question_type == "Text - Long" %>
-    <div><textarea rows="4" cols="50"></textarea></div>
-  <% elsif question.question_type == "Yes or No" %>
-    <div><input type ="radio" name="choice" value="Yes">Yes<input type ="radio" name="choice" value="No">No</div>
-  <% else %>
-    <div><input type="checkbox"></div>
-  <% end %>
+  <div><%= f.submit "Submit" %></div>
 <% end %>
-
-<div><button type="submit">Submit</button></div>
 
 
 

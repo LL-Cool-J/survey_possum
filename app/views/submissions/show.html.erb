@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<%= @survey.title %>
+<%= @survey.description %>
+
+<br>
+
+<% @answers.each do |a| %>
+<div><%= a.question.order_number %>. <%= a.question.question_text %></div>
+<div><%= a.response %></div>
+<% end %>
+
+<br>
+<%= link_to "Submissions", result_path(@survey) %>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Responses Submitted for <%= @survey.title %></h1>
+<br>
+  <% @questions.each do |question| %>
+    <% answers = Answer.where(question_id: question.id) %>
+    <div><%= question.order_number %>. <%= question.question_text %></div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Submission ID</th>
+          <th>Response</th>
+          <th colspan="1"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% answers.each do |answer| %>
+        <tr>
+          <td><%= answer.submission_id%></td>
+          <td><%= answer.response %></td>
+          <td><%= link_to 'View Related Answers', answer.submission %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+  <% end %>
+
+<%= link_to 'My Surveys', surveys_path %>
+<%= link_to 'Take this Survey', @survey %>
+<%= link_to 'Home', root_path %>

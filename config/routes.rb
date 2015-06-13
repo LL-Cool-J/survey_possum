@@ -4,8 +4,11 @@ Rails.application.routes.draw do
   get 'dashboard/home'
   get 'home' => 'dashboard#home'
 
+  resources :submissions
   resources :surveys
   resources :authors
+  resources :results
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

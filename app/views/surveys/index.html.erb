@@ -15,9 +15,10 @@
   <tbody>
     <% @surveys.each do |survey| %>
       <tr>
-        <td><%= survey.author_id %></td>
+        <td><%= "#{survey.author.first_name} #{survey.author.last_name}" %></td>
         <td><%= survey.title %></td>
         <td><%= survey.description %></td>
+        <td><%= link_to 'View Submissions', result_path(survey) %>
         <td><%= link_to 'Show', survey %></td>
         <td><%= link_to 'Edit', edit_survey_path(survey) %></td>
         <td><%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
