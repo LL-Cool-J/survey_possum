@@ -9,13 +9,8 @@
 <body>
 
   <nav class="navigation-bar">
-    <%= link_to root_path, class: "navigation-bar-link-home" do %>
-      <span class="navigation-bar-home">Home</span>
-    <% end %>
-
-    <%= link_to new_survey_path, class: "navigation-bar-link-new" do %>
-      <span class="navigation-bar-new">Create New</span>
-    <% end %>
+    <%= link_to 'Home', root_path, class: "navigation-bar-link-home" %>
+    <%= link_to 'Create New', new_survey_path, class: "navigation-bar-link-new" %>
   </nav>
 
 <%= yield %>
