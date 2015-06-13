@@ -15,7 +15,7 @@
   <tbody>
     <% @surveys.each do |survey| %>
       <tr>
-        <td><%= survey.author_id %></td>
+        <td><%= "#{survey.author.first_name} #{survey.author.last_name}" %></td>
         <td><%= survey.title %></td>
         <td><%= survey.description %></td>
         <td><%= link_to 'View Submissions', result_path(survey) %>
