@@ -2,12 +2,12 @@
 
 one:
   author: :one
-  title: MyString
-  description: MyText
+  title: Survey 1
+  description: First survey.
   published: false
 
 two:
   author: :two
-  title: MyString
-  description: MyText
+  title: Survey 2
+  description: Second survey.
   published: false

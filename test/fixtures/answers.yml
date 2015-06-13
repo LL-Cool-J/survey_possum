@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  question_id: 1
-  submission_id: 1
-  response: MyString
+  question: :one
+  submission: :one
+  response: Because.
 
 two:
-  question_id: 1
-  submission_id: 1
-  response: MyString
+  question_id: :two
+  submission_id: :two
+  response: Yes

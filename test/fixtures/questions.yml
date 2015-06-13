@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  question_text: MyString
-  question_info: MyString
-  question_type: MyString
+  question_text: Why?
+  question_info: Why not.
+  question_type: Text - Long
   required: false
   order_number: 1
 
 two:
-  question_text: MyString
-  question_info: MyString
-  question_type: MyString
+  question_text: Yes or no?
+  question_info: Maybe.
+  question_type: Yes or No
   required: false
-  order_number: 1
+  order_number: 2
