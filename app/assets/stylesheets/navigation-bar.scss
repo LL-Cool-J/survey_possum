@@ -11,48 +11,38 @@
     left: 10%;
     transform: translateY(-50%);
     display: inline-block;
+    padding: 0.5rem 0;
     text-decoration: none;
-    background-color: #00B479;
-    color: #40464C;
-    height: 2rem;
-    width: 7rem;
+    background-color: #797D85;
+    color: #FBFBFB;
+    width: 10rem;
     text-align: center;
+    font-size: 1rem;
     
     &:hover,
     &:focus {
-      background-color: #40464C;
-      color: #00B479;
+      background-color: #FBFBFB;
+      color: #797D85;
     }
   }
-  
-    .navigation-bar-home {
-      font-size: 1rem;
-      font-weight: bold;
-      line-height: 2rem;
-    }
-  
+
   .navigation-bar-link-new {
     position: absolute;
     top: 50%;
     right: 10%;
     transform: translateY(-50%);
     display: inline-block;
+    padding: 0.5rem 0;
     text-decoration: none;
-    background-color: #00B479;
-    color: #40464C;
-    height: 2rem;
-    width: 7rem;
+    background-color: #797D85;
+    color: #FBFBFB;
+    width: 10rem;
     text-align: center;
+    font-size: 1rem;
     
     &:hover,
     &:focus {
-      background-color: #40464C;
-      color: #00B479;
+      background-color: #FBFBFB;
+      color: #797D85;
     }
   }
-  
-    .navigation-bar-new {
-      font-size: 1rem;
-      font-weight: bold;
-      line-height: 2rem;
-    }
