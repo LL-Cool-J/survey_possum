@@ -11,6 +11,8 @@ class SurveysController < ApplicationController
   # GET /surveys/1.json
   def show
     @questions = @survey.questions
+    @submission = Submission.new(survey_id: params[:id])
+    @submission.answers.build
   end
 
   # GET /surveys/new
@@ -76,4 +78,5 @@ class SurveysController < ApplicationController
           questions_attributes: [:id, :question_text, :question_info, :question_type,
           :required, :order_number, :_destroy])
     end
+
 end
