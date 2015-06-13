@@ -5,6 +5,7 @@ class SubmissionsControllerTest < ActionController::TestCase
     @submission = submissions(:one)
     @answer = answers(:one)
     @question = questions(:one)
+    @survey = surveys(:one)
   end
 
   test "should get index" do
@@ -58,6 +59,6 @@ class SubmissionsControllerTest < ActionController::TestCase
       delete :destroy, id: @submission
     end
 
-    assert_redirected_to submissions_path
+    assert_redirected_to result_path(@submission.survey)
   end
 end

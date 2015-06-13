@@ -1,7 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<%= @answers.map {|a| a.question_id} %>
-<%= @answers.map {|a| a.response} %>
-<%= @answers.map {|a| a.submission_id} %>
+<%= @survey.title %>
+<%= @survey.description %>
 
-<%= link_to "Submissions", submissions_path %>
+<br>
+
+<% @answers.each do |a| %>
+<div><%= a.question.order_number %>. <%= a.question.question_text %></div>
+<div><%= a.response %></div>
+<% end %>
+
+<br>
+<%= link_to "Submissions", result_path(@survey) %>

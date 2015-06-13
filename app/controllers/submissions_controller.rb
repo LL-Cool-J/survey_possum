@@ -10,6 +10,7 @@ class SubmissionsController < ApplicationController
   # GET /submissions/1
   # GET /submissions/1.json
   def show
+    @survey = @submission.survey
     @answers = @submission.answers
   end
 
@@ -56,7 +57,7 @@ class SubmissionsController < ApplicationController
   def destroy
     @submission.destroy
     respond_to do |format|
-      format.html { redirect_to submissions_url, notice: 'Submission was successfully destroyed.' }
+      format.html { redirect_to result_path(@submission.survey), notice: 'Submission was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
