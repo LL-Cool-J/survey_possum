@@ -89,7 +89,7 @@
       }
     }
     
-  .survey-edit-question-container {
+  .survey-edit-question-published-container {
     position: relative;
     display: inline-block;
     width: 100%;
@@ -180,3 +180,17 @@
           width: 15rem;
         }
       }
+      
+    .survey-edit-question-required-container {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 2rem;
+      
+      & label {
+        position: relative;
+        display: inline-block;
+        width: 10rem;
+        font-size: 1rem;
+      }
+    }

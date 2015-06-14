@@ -36,7 +36,7 @@
         <%= f.text_area :description %>
       </div>
     </div>
-    <div class="field survey-edit-question-container">
+    <div class="field survey-edit-question-published-container">
       <%= f.label :published? %>
       <%= f.check_box :published %>
     </div>
@@ -66,8 +66,8 @@
             <%= ff.select :question_type, options_for_select(["", "Text - Short", "Text - Long", "Yes or No", "Checkbox"]) %>
           </div>
         </div>
-        <div class="field survey-edit-question-required">
-          <%= ff.label :required? %><br>
+        <div class="field survey-edit-question-required-container">
+          <%= ff.label :required? %>
           <%= ff.check_box :required %>
         </div>
         <div>
