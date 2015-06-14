@@ -1,7 +1,7 @@
 class SubmissionsController < ApplicationController
   before_action :logged_in?, except: [:create, :thankyou]
   before_action :set_submission, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_author, only: :show
   # GET /submissions
   # GET /submissions.json
   def index
@@ -69,6 +69,7 @@ class SubmissionsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_submission
       @submission = Submission.find(params[:id])
+      @author = @submission.survey.author
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
