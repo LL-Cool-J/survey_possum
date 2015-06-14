@@ -35,9 +35,9 @@
   <%= form_for(@submission) do |f| %>
   <%= f.hidden_field :survey_id, :value => @survey.id %>
     <% @questions.each do |question| %>
-      <div><%= "*" if question.required %><%= question.order_number %>. <%= question.question_text %></div>
+      <div class="survey-show-question-text"><%= "*" if question.required %><%= question.order_number %>. <%= question.question_text %></div>
       <% if question.question_info %>
-        <div><%= question.question_info %></div>
+        <div class="survey-show-question-description"><%= question.question_info %></div>
       <% end %>
         <%= f.fields_for :answers do |ff| %>
           <%= ff.hidden_field :question_id, :value => question.id %>
