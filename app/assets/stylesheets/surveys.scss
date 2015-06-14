@@ -289,7 +289,7 @@
 
 .survey-show-container {
   position: relative;
-  margin: 0 auto;
+  margin: 2rem auto 0 auto;
   width: 30rem;
 }
 
@@ -365,6 +365,10 @@
       position: relative;
       display: inline-block;
       margin-bottom: 1rem;
+      
+      & label {
+        font-size: 0.8rem;
+      }
     }
     
       .survey-show-question-text {
@@ -377,4 +381,29 @@
         position: relative;
         display: inline-block;
         font-size: 0.8rem;
+      }
+      
+      .survey-show-question-container {
+        & textarea {
+          position: relative;
+          font-size: 0.7rem;
+          width: 100%;
+          height: 4rem;
+        }
+        
+        & input[type="text"] {
+          position: relative;
+          font-size: 0.7rem;
+          width: 100%;
+        }
+        
+        & input[type="radio"] {
+          position: relative;
+          font-size: 0.7rem;
+        }
+        
+        & input[type="checkbox"] {
+          position: relative;
+          font-size: 0.7rem;
+        }
       }
