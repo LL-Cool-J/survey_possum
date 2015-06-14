@@ -1,0 +1,83 @@
+// Place all the styles related to the login page here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.login-page-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 4rem 2rem;
+  background-color: #97D6B9;
+  min-width: 20rem;
+}
+
+  .login-page-email {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 4rem;
+    width: 100%;
+  }
+  
+    .login-page-email-text label {
+      position: absolute;
+      display: inline-block;
+      top: 0;
+      left: 0;
+      width: 5rem;
+      font-size: 1rem;
+    }
+    
+    .login-page-email-input input {
+      position: absolute;
+      display: inline-block;
+      top: 0;
+      right: 0;
+      width: 10rem;
+      margin: 0;
+      font-size: 1rem;
+    }
+    
+  .login-page-password {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 4rem;
+    width: 100%;
+  }
+  
+    .login-page-password-text label {
+      position: absolute;
+      display: inline-block;
+      top: 0;
+      left: 0;
+      width: 5rem;
+      font-size: 1rem;
+    }
+    
+    .login-page-password-input input {
+      position: absolute;
+      display: inline-block;
+      top: 0;
+      right: 0;
+      width: 10rem;
+      margin: 0;
+      font-size: 1rem;
+    }
+    
+  .login-page-button {
+    position: relative;
+    display: block;
+    font-size: 1rem;
+    border: 0;
+    margin: 0 auto;
+    width: 8rem;
+    height: 2rem;
+    background-color: #3F464D;
+    color: #FBFBFB;
+    
+    &:hover,
+    &:focus {
+      background-color: #FBFBFB;
+      color: #3F464D;
+    }
+  }
