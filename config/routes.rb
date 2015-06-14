@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'login' => 'dashboard#login'
   post 'login' => 'dashboard#login'
   get 'logout' => 'dashboard#logout'
-
+  get 'signup' => 'dashboard#signup'
   resources :submissions do
     collection do
       get 'thankyou'

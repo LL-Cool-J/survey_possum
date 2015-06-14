@@ -25,15 +25,11 @@ class AuthorsController < ApplicationController
   # POST /authors.json
   def create
     @author = Author.new(author_params)
-
-    respond_to do |format|
-      if @author.save
-        format.html { redirect_to @author, notice: 'Author was successfully created.' }
-        format.json { render :show, status: :created, location: @author }
-      else
-        format.html { render :new }
-        format.json { render json: @author.errors, status: :unprocessable_entity }
-      end
+    if @author.save
+      session[:author_id] = @author.id
+      redirect_to root_path, notice: "Welcome to SurveyPossum, #{@author.first_name}!"
+    else
+      render :new
     end
   end
 
@@ -69,6 +65,6 @@ class AuthorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def author_params
-      params.require(:author).permit(:first_name, :last_name, :email, :password_digest)
+      params.require(:author).permit(:first_name, :last_name, :email, :password, :password_confirmation)
     end
 end
