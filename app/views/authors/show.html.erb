@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Id:</strong>
-  <%= @author.id %>
-</p>
-
-<p>
   <strong>First name:</strong>
   <%= @author.first_name %>
 </p>
@@ -20,10 +15,6 @@
   <%= @author.email %>
 </p>
 
-<p>
-  <strong>Password digest:</strong>
-  <%= @author.password_digest %>
-</p>
 
-<%= link_to 'Edit', edit_author_path(@author) %> |
-<%= link_to 'Back', authors_path %>
+<%= link_to 'Edit', edit_author_path(@author) %>
+<%= link_to 'My Surveys', surveys_path %>

@@ -1,10 +1,10 @@
 class AuthorsController < ApplicationController
   before_action :set_author, only: [:show, :edit, :update, :destroy]
-
+  before_action :logged_in?, except: [:new, :create]
+  before_action :check_author, except: [:new, :create]
   # GET /authors
   # GET /authors.json
   def index
-    @authors = Author.all
   end
 
   # GET /authors/1
@@ -38,7 +38,7 @@ class AuthorsController < ApplicationController
   def update
     respond_to do |format|
       if @author.update(author_params)
-        format.html { redirect_to @author, notice: 'Author was successfully updated.' }
+        format.html { redirect_to @author, notice: 'Account successfully updated.' }
         format.json { render :show, status: :ok, location: @author }
       else
         format.html { render :edit }
