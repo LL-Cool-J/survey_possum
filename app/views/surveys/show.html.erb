@@ -15,11 +15,20 @@
     <div class="survey-show-description-text">Description:</div>
     <div class="survey-show-description-description"><%= @survey.description %></div>
   </div>
-
-  <div class="survey-show-published-container">
-    <div class="survey-show-published-text">Published?:</div>
-    <div class="survey-show-published-description"><%= @survey.published %></div>
-  </div>
+  <% if @survey.author_id == session[:author_id] %>
+    <% if @survey.published == false %>
+      <div class="survey-show-published-container">
+        <div class="survey-show-published-text">This survey has not been published yet.</div>
+      </div>
+    <% else %>
+      <div class="survey-show-published-container">
+        <div class="survey-show-published-text">This survey has been published.</div>
+      </div>
+      <div class="survey-show-published-container">
+        <div class="survey-show-published-text"><%= "Here's a link to the survey: localhost:3000/surveys/#{@survey.id}" %></div>
+      </div>
+    <% end %>
+  <% end %>
 
   <br>
 
@@ -52,6 +61,6 @@
 
 
 
-  <%= link_to 'Edit', edit_survey_path(@survey) if @survey.author_id == session[:author_id] %>
+  <%= link_to 'Edit', edit_survey_path(@survey) if @survey.author_id == session[:author_id] && !(@survey.published) %>
   <%= link_to 'Back', surveys_path if @survey.author_id == session[:author_id] %>
 </div>

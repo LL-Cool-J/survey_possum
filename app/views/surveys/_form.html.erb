@@ -13,6 +13,7 @@
 
   <div class="survey-edit-container">
     <%= f.hidden_field :author_id, :value => session[:author_id]%><br>
+    <%= f.hidden_field :published, :value => false %>
     <div class="field survey-edit-title-container">
       <div class="survey-edit-title-text">
         <%= f.label :title %><br>
@@ -28,10 +29,6 @@
       <div class="survey-edit-description-input">
         <%= f.text_area :description %>
       </div>
-    </div>
-    <div class="field survey-edit-question-published-container">
-      <%= f.label :published? %>
-      <%= f.check_box :published %>
     </div>
       <%= f.fields_for :questions do |ff| %>
         <div class="field survey-edit-question-text-container">
@@ -68,6 +65,10 @@
           <%= ff.check_box :_destroy %>
         </div>
       <% end %>
+      <div class="field survey-edit-question-published-container">
+        <%= f.label :published, "Click here if you're ready to publish this survey." %>
+        <%= f.check_box :published %>
+      </div>
       <div class="survey-edit-create-survey-button">
         <%= f.submit %>
       </div>
