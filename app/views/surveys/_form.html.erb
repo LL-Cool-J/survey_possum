@@ -58,9 +58,13 @@
             <%= ff.text_area :question_info %>
           </div>
         </div>
-        <div class="field survey-edit-question-type">
-          <%= ff.label :question_type %><br>
-          <%= ff.select :question_type, options_for_select(["", "Text - Short", "Text - Long", "Yes or No", "Checkbox"]) %>
+        <div class="field survey-edit-question-type-container">
+          <div class="survey-edit-question-type-text">
+            <%= ff.label :question_type %><br>
+          </div>
+          <div class="survey-edit-question-type-dropdown">
+            <%= ff.select :question_type, options_for_select(["", "Text - Short", "Text - Long", "Yes or No", "Checkbox"]) %>
+          </div>
         </div>
         <div class="field survey-edit-question-required">
           <%= ff.label :required? %><br>

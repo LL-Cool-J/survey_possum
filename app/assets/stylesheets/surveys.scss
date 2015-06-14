@@ -146,3 +146,30 @@
           width: 15rem;
         }
       }
+      
+    .survey-edit-question-type-container {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+  
+      .survey-edit-question-type-text {
+        position: relative;
+        display: inline-block;
+        width: 10rem;
+        
+         & label {
+        font-size: 1rem;
+        }
+      }
+      
+      .survey-edit-question-type-dropdown {
+        position: relative;
+        display: inline-block;
+        
+        & select {
+          font-size: 1rem;
+          width: 15rem;
+        }
+      }
