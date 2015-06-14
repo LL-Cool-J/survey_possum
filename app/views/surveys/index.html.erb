@@ -14,7 +14,7 @@
 
   <tbody>
     <% @surveys.each do |survey| %>
-      <tr>
+      <tr class="survey-listing-table-body-rows">
         <td><%= "#{survey.author.first_name} #{survey.author.last_name}" %></td>
         <td><%= survey.title %></td>
         <td><%= survey.description %></td>

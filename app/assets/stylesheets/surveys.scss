@@ -240,18 +240,29 @@
 
   .survey-listing-table th {
     font-size: 1rem;
-    border: 1px solid black;
     padding: 0.5rem;
     font-weight: bold;
   }
   
   .survey-listing-table td {
     font-size: 0.7rem;
-    border: 1px solid black;
     padding: 0.5rem;
     
     & a {
+      display: inline-block;
+      background-color: #3F464D;
+      color: #FBFBFB;
+      padding: 0.5rem 0.7rem;
       font-size: 0.7rem;
       text-decoration: none;
+      
+      &:hover,
+      &:focus {
+        background-color: #00B479;
+      }
     }
+  }
+  
+  .survey-listing-table-body-rows:not(:last-child) {
+    border-bottom: 1px solid black;
   }
