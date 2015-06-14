@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   post 'login' => 'dashboard#login'
   get 'logout' => 'dashboard#logout'
 
-  resources :submissions
+  resources :submissions do
+    collection do
+      get 'thankyou'
+    end
+  end
   resources :surveys
   resources :authors
   resources :results
