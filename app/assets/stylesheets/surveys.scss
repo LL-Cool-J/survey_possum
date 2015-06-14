@@ -361,14 +361,20 @@
       font-size: 1rem;
     }
     
-    .survey-show-question-text {
+    .survey-show-question-container {
       position: relative;
       display: inline-block;
-      font-size: 1rem;
+      margin-bottom: 1rem;
     }
     
-    .survey-show-question-description {
-      position: relative;
-      display: inline-block;
-      font-size: 0.8rem;
-    }
+      .survey-show-question-text {
+        position: relative;
+        display: inline-block;
+        font-size: 1rem;
+      }
+      
+      .survey-show-question-description {
+        position: relative;
+        display: inline-block;
+        font-size: 0.8rem;
+      }
