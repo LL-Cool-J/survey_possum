@@ -4,6 +4,7 @@ class SurveysControllerTest < ActionController::TestCase
   setup do
     @survey = surveys(:one)
     @author = authors(:one)
+    session[:author_id] = @author.id
     @question = questions(:one)
   end
 

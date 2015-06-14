@@ -9,8 +9,9 @@
 <body>
 
   <nav class="navigation-bar">
-    <%= link_to 'Home', root_path, class: "navigation-bar-link-home" %>
-    <%= link_to 'Create New', new_survey_path, class: "navigation-bar-link-new" %>
+    <%= link_to 'Home', root_path, class: "navigation-bar-link-home" if session[:author_id] %>
+    <%= link_to 'Create New', new_survey_path, class: "navigation-bar-link-new" if session[:author_id] %>
+    <%= link_to 'Logout', logout_path if session[:author_id] %>
   </nav>
 
 <%= yield %>

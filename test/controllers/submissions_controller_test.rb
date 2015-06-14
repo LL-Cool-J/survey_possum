@@ -3,6 +3,8 @@ require 'test_helper'
 class SubmissionsControllerTest < ActionController::TestCase
   setup do
     @submission = submissions(:one)
+    @author = authors(:one)
+    session[:author_id] = @author.id
     @answer = answers(:one)
     @question = questions(:one)
     @survey = surveys(:one)
