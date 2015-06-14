@@ -194,3 +194,17 @@
         font-size: 1rem;
       }
     }
+    
+    .survey-edit-question-delete-container {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 2rem;
+      
+      & label {
+        position: relative;
+        display: inline-block;
+        width: 10rem;
+        font-size: 1rem;
+      }
+    }
