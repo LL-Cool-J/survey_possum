@@ -231,6 +231,15 @@
   
 //Listing Surveys
 
+.survey-listing-title {
+  position: relative;
+  display: block;
+  margin: 3rem auto 0 auto;
+  text-align: center;
+  font-size: 3rem;
+  color: #00B479;
+}
+
 .survey-listing-table {
   position: absolute;
   top: 50%;
