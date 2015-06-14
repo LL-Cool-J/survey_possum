@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//Creating Survey Page
+
 .survey-edit-container {
   position: relative;
   margin: 0 auto;
@@ -224,5 +226,32 @@
       &:focus {
         background-color: #3F464D;
       }
+    }
+  }
+  
+//Listing Surveys
+
+.survey-listing-table {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+  .survey-listing-table th {
+    font-size: 1rem;
+    border: 1px solid black;
+    padding: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .survey-listing-table td {
+    font-size: 0.7rem;
+    border: 1px solid black;
+    padding: 0.5rem;
+    
+    & a {
+      font-size: 0.7rem;
+      text-decoration: none;
     }
   }
