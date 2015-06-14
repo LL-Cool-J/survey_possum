@@ -9,8 +9,8 @@
     <table>
       <thead>
         <tr>
-          <th>Submission ID</th>
           <th>Response</th>
+          <th>Submission ID</th>
           <th colspan="1"></th>
         </tr>
       </thead>
@@ -18,9 +18,8 @@
       <tbody>
         <% answers.each do |answer| %>
         <tr>
-          <td><%= answer.submission_id%></td>
           <td><%= answer.response %></td>
-          <td><%= link_to 'View Related Answers', answer.submission %></td>
+          <td><%= link_to "#{answer.submission_id}", answer.submission %></td>
         </tr>
         <% end %>
       </tbody>

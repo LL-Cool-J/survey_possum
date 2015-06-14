@@ -3,26 +3,26 @@
 <div class="survey-show-container">
   <div class="survey-show-author-container">
     <div class="survey-show-author-text">Author:</div>
-    <div class="survey-show-author-description"><%= @survey.author_id %></div>
+    <div class="survey-show-author-description"><%= "#{@survey.author.first_name} #{@survey.author.last_name}" %></div>
   </div>
-  
+
   <div class="survey-show-title-container">
     <div class="survey-show-title-text">Title:</div>
     <div class="survey-show-title-description"><%= @survey.title %></div>
   </div>
-  
+
   <div class="survey-show-description-container">
     <div class="survey-show-description-text">Description:</div>
     <div class="survey-show-description-description"><%= @survey.description %></div>
   </div>
-  
+
   <div class="survey-show-published-container">
     <div class="survey-show-published-text">Published?:</div>
     <div class="survey-show-published-description"><%= @survey.published %></div>
   </div>
-  
+
   <br>
-  
+
   <%= form_for(@submission) do |f| %>
   <%= f.hidden_field :survey_id, :value => @survey.id %>
     <% @questions.each do |question| %>
@@ -48,10 +48,10 @@
     <% end %>
     <div><%= f.submit "Submit" %></div>
   <% end %>
-  
-  
-  
-  
+
+
+
+
   <%= link_to 'Edit', edit_survey_path(@survey) %> |
   <%= link_to 'Back', surveys_path %>
 </div>

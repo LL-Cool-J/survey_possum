@@ -6,10 +6,9 @@ class AuthorsControllerTest < ActionController::TestCase
     session[:author_id] = @author.id
   end
 
-  test "should get index" do
+  test "should NOT get index" do
     get :index
-    assert_response :success
-    assert_not_nil assigns(:authors)
+    assert_redirected_to root_path
   end
 
   test "should get new" do
@@ -18,11 +17,13 @@ class AuthorsControllerTest < ActionController::TestCase
   end
 
   test "should create author" do
+    session[:author_id] = nil
     assert_difference('Author.count') do
-      post :create, author: { email: Faker::Internet.email, first_name: @author.first_name, last_name: @author.last_name, password_digest: "password" }
+      post :create, author: { email: Faker::Internet.email, first_name: @author.first_name,
+          last_name: @author.last_name, password: "password", password_confirmation: "password" }
     end
 
-    assert_redirected_to author_path(assigns(:author))
+    assert_redirected_to root_path
   end
 
   test "should show author" do

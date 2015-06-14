@@ -12,14 +12,7 @@
   <% end %>
 
   <div class="survey-edit-container">
-    <div class="field survey-edit-author-container">
-      <div class="survey-edit-author-text">
-        <%= f.label :author_id %><br>
-      </div>
-      <div class="survey-edit-author-input">
-        <%= f.number_field :author_id %>
-      </div>
-    </div>
+    <%= f.hidden_field :author_id, :value => session[:author_id]%><br>
     <div class="field survey-edit-title-container">
       <div class="survey-edit-title-text">
         <%= f.label :title %><br>
