@@ -280,3 +280,11 @@
   .survey-listing-table-body-rows:not(:last-child) {
     border-bottom: 1px solid black;
   }
+  
+// Show Survey Page
+
+.survey-show-container {
+  position: relative;
+  margin: 0 auto;
+  width: 30rem;
+}
