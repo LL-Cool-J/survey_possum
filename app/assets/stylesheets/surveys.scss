@@ -208,3 +208,21 @@
         font-size: 1rem;
       }
     }
+    
+  .survey-edit-create-survey-button {
+    position: relative;
+    text-align: center;
+    
+    & input {
+      font-size: 1rem;
+      padding: 0.5rem 2rem;
+      border: 0;
+      background-color: #00B479;
+      color: #FBFBFB;
+      
+      &:hover,
+      &:focus {
+        background-color: #3F464D;
+      }
+    }
+  }
