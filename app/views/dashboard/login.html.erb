@@ -1,8 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<%= form_tag %>
-<%= label_tag :email %>
-<%= text_field_tag :email %>
-<%= label_tag :password %>
-<%= password_field_tag :password %>
-<%= submit_tag "Login" %>
+<div class="login-page-container">
+  <%= form_tag %>
+  <div class="login-page-email"
+    <div class="login-page-email-text">
+      <%= label_tag :email %>
+    </dv>
+    <div class="login-page-email-input">
+      <%= text_field_tag :email %>
+    </div>
+  </div>
+  <div class="login-page-password">
+    <div class="login-page-password-text">
+      <%= label_tag :password %>
+    </div>
+    <div class="login-page-password-input">
+      <%= password_field_tag :password %>
+    </div>
+  </div>
+  <%= submit_tag "Login" %>
+</div>
