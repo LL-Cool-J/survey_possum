@@ -1,4 +1,5 @@
 class SurveysController < ApplicationController
+  before_action :logged_in?, except: [:show]
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
 
   # GET /surveys

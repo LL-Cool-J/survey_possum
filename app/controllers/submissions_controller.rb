@@ -1,4 +1,5 @@
 class SubmissionsController < ApplicationController
+  before_action :logged_in?, except: [:create, :show, :thankyou]
   before_action :set_submission, only: [:show, :edit, :update, :destroy]
 
   # GET /submissions
@@ -27,15 +28,17 @@ class SubmissionsController < ApplicationController
   # POST /submissions.json
   def create
     @submission = Submission.new(submission_params)
-    respond_to do |format|
-      if @submission.save
-        format.html { redirect_to @submission, notice: 'Submission was successfully created.' }
-        format.json { render :show, status: :created, location: @submission }
-      else
-        format.html { render :new }
-        format.json { render json: @submission.errors, status: :unprocessable_entity }
-      end
+    if @submission.save && @submission.survey.author.id == session[:author_id]
+      redirect_to @submission, notice: 'Submission was successfully created.'
+    elsif @submission.save
+      redirect_to thankyou_submissions_path
+    else
+      format.html { render :new }
+      format.json { render json: @submission.errors, status: :unprocessable_entity }
     end
+  end
+
+  def thankyou
   end
 
   # # PATCH/PUT /submissions/1
