@@ -11,4 +11,7 @@ class Survey < ActiveRecord::Base
   validates :author_id, presence: true
   validates :title, presence: true
 
+  def publish!
+    self.published = true
+  end
 end
