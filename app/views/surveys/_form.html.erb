@@ -50,9 +50,13 @@
             <%= ff.text_field :question_text %>
           </div>
         </div>
-        <div class="field survey-edit-question-description">
-          <%= ff.label :description %> (optional)<br>
-          <%= ff.text_area :question_info %>
+        <div class="field survey-edit-question-description-container">
+          <div class="survey-edit-question-description-text">
+            <%= ff.label :description %> (optional)<br>
+          </div>
+          <div class="survey-edit-question-description-input">
+            <%= ff.text_area :question_info %>
+          </div>
         </div>
         <div class="field survey-edit-question-type">
           <%= ff.label :question_type %><br>
