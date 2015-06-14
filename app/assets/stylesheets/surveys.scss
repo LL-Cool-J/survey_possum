@@ -8,6 +8,87 @@
   width: 80%;
 }
 
+  .survey-edit-author-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+    .survey-edit-author-text {
+      position: relative;
+      display: inline-block;
+      width: 10rem;
+      
+      & label {
+        font-size: 1rem;
+      }
+    }
+    
+    .survey-edit-author-input {
+      position: relative;
+      display: inline-block;
+      
+      & input {
+        font-size: 1rem;
+        width: 15rem;
+      }
+    }
+    
+  .survey-edit-title-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+    .survey-edit-title-text {
+      position: relative;
+      display: inline-block;
+      width: 10rem;
+      
+      & label {
+        font-size: 1rem;
+      }
+    }
+    
+    .survey-edit-title-input {
+      position: relative;
+      display: inline-block;
+      
+      & input {
+        font-size: 1rem;
+        width: 15rem;
+      }
+    }
+    
+  .survey-edit-description-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+    .survey-edit-description-text {
+      position: relative;
+      display: inline-block;
+      width: 10rem;
+      
+      & label {
+        font-size: 1rem;
+      }
+    }
+    
+    .survey-edit-description-input {
+      position: relative;
+      display: inline-block;
+      
+      & textarea {
+        font-size: 1rem;
+        width: 15rem;
+      }
+    }
+
 // .survey-edit-wrapper {
 //   display: block;
 //   text-align: left;
