@@ -263,6 +263,11 @@
     }
   }
   
+    .survey-listing-table-body-description {
+      max-width: 20rem;
+      word-wrap: break-word;
+    }
+  
   .survey-listing-table-body-rows:not(:last-child) {
     border-bottom: 1px solid black;
   }
