@@ -1,11 +1,12 @@
 class SurveysController < ApplicationController
   before_action :logged_in?, except: [:show]
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
+  before_action :check_author, only: [:edit, :update, :destroy]
 
   # GET /surveys
   # GET /surveys.json
   def index
-    @surveys = Survey.all
+    @surveys = Survey.where(author_id: session[:author_id])
   end
 
   # GET /surveys/1
@@ -71,6 +72,7 @@ class SurveysController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_survey
       @survey = Survey.find(params[:id])
+      @author = @survey.author
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

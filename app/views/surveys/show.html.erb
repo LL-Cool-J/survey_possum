@@ -52,6 +52,6 @@
 
 
 
-  <%= link_to 'Edit', edit_survey_path(@survey) %> |
-  <%= link_to 'Back', surveys_path %>
+  <%= link_to 'Edit', edit_survey_path(@survey) if @survey.author_id == session[:author_id] %>
+  <%= link_to 'Back', surveys_path if @survey.author_id == session[:author_id] %>
 </div>
