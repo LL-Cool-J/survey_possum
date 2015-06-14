@@ -407,3 +407,22 @@
           font-size: 0.7rem;
         }
       }
+      
+    .survey-show-submit-button {
+      position: relative;
+      display: block;
+      text-align: center;
+      
+      & input {
+        background-color: #00BE7B;
+        color: #FBFBFB;
+        font-size: 1rem;
+        padding: 0.5rem 3rem;
+        border: 0;
+        
+        &:hover,
+        &:focus {
+          background-color: #3F464D;
+        }
+      }
+    }
