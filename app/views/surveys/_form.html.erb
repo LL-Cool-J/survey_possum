@@ -41,12 +41,14 @@
       <%= f.check_box :published %>
     </div>
       <%= f.fields_for :questions do |ff| %>
-        <div class="field survey-edit-question-num">
-          Question <%= ff.index + 1 %>
-          <%= ff.hidden_field :order_number, :value => (ff.index + 1)  %>
-        </div>
-        <div class="field survey-edit-question">
-          <%= ff.text_field :question_text %>
+        <div class="field survey-edit-question-text-container">
+          <div class="survey-edit-question-text-title">
+            Question <%= ff.index + 1 %>
+            <%= ff.hidden_field :order_number, :value => (ff.index + 1)  %>
+          </div>
+          <div class="field survey-edit-question-input">
+            <%= ff.text_field :question_text %>
+          </div>
         </div>
         <div class="field survey-edit-question-description">
           <%= ff.label :description %> (optional)<br>
