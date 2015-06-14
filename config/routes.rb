@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root 'dashboard#home'
   get 'dashboard/home'
   get 'home' => 'dashboard#home'
+  get 'login' => 'dashboard#login'
+  post 'login' => 'dashboard#login'
+  get 'logout' => 'dashboard#logout'
 
   resources :submissions
   resources :surveys
