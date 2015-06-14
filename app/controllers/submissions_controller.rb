@@ -1,5 +1,5 @@
 class SubmissionsController < ApplicationController
-  before_action :logged_in?, except: [:create, :show, :thankyou]
+  before_action :logged_in?, except: [:create, :thankyou]
   before_action :set_submission, only: [:show, :edit, :update, :destroy]
 
   # GET /submissions
