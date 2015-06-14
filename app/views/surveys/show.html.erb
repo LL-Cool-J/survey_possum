@@ -6,20 +6,20 @@
     <div class="survey-show-author-description"><%= @survey.author_id %></div>
   </div>
   
-  <p>
-    <strong>Title:</strong>
-    <%= @survey.title %>
-  </p>
+  <div class="survey-show-title-container">
+    <div class="survey-show-title-text">Title:</div>
+    <div class="survey-show-title-description"><%= @survey.title %></div>
+  </div>
   
-  <p>
-    <strong>Description:</strong>
-    <%= @survey.description %>
-  </p>
+  <div class="survey-show-description-container">
+    <div class="survey-show-description-text">Description:</div>
+    <div class="survey-show-description-description"><%= @survey.description %></div>
+  </div>
   
-  <p>
-    <strong>Published?:</strong>
-    <%= @survey.published %>
-  </p>
+  <div class="survey-show-published-container">
+    <div class="survey-show-published-text">Published?:</div>
+    <div class="survey-show-published-description"><%= @survey.published %></div>
+  </div>
   
   <br>
   

@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-//Creating Survey Page
+// CREATING SURVEY PAGE
 
 .survey-edit-container {
   position: relative;
@@ -229,7 +229,9 @@
     }
   }
   
-//Survey Listing Table
+  
+  
+// SURVEY LISTING TABLE PAGE
 
 .survey-listing-title {
   position: relative;
@@ -281,10 +283,72 @@
     border-bottom: 1px solid black;
   }
   
-// Show Survey Page
+  
+  
+// SHOW SURVEY PAGE
 
 .survey-show-container {
   position: relative;
   margin: 0 auto;
   width: 30rem;
 }
+
+  .survey-show-author-container {
+    position: relative;
+    display: block;
+  }
+  
+    .survey-show-author-text {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .survey-show-author-description {
+      position: relative;
+      display: inline-block;
+    }
+    
+  .survey-show-title-container {
+    position: relative;
+    display: block;
+  }
+  
+    .survey-show-title-text {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .survey-show-title-description {
+      position: relative;
+      display: inline-block;
+    }
+    
+  .survey-show-description-container {
+    position: relative;
+    display: block;
+  }
+  
+    .survey-show-description-text {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .survey-show-description-description {
+      position: relative;
+      display: inline-block;
+    }
+    
+  .survey-show-published-container {
+    position: relative;
+    display: block;
+  }
+  
+    .survey-show-published-text {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .survey-show-published-description {
+      position: relative;
+      display: inline-block;
+    }
