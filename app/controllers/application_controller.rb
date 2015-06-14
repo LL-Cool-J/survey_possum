@@ -15,4 +15,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def check_author
+    if @author && session[:author_id] == @author.id
+      return true
+    else
+      redirect_to root_path, notice: "Sorry, you don't have access to that page!"
+    end
+  end
+
 end

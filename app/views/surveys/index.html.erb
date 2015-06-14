@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Surveys</h1>
+<div class="survey-listing-title">Surveys</div>
 
-<table>
+<table class="survey-listing-table">
   <thead>
     <tr>
       <th>Author</th>
@@ -14,10 +14,10 @@
 
   <tbody>
     <% @surveys.each do |survey| %>
-      <tr>
+      <tr class="survey-listing-table-body-rows">
         <td><%= "#{survey.author.first_name} #{survey.author.last_name}" %></td>
         <td><%= survey.title %></td>
-        <td><%= survey.description %></td>
+        <td class="survey-listing-table-body-description"><%= survey.description %></td>
         <td><%= link_to 'View Submissions', result_path(survey) %>
         <td><%= link_to 'Show', survey %></td>
         <td><%= link_to 'Edit', edit_survey_path(survey) %></td>
@@ -26,7 +26,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Survey', new_survey_path %>

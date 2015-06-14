@@ -2,10 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// CREATING SURVEY PAGE
+
 .survey-edit-container {
   position: relative;
   margin: 0 auto;
-  width: 80%;
+  width: 30rem;
 }
 
   .survey-edit-author-container {
@@ -226,3 +228,127 @@
       }
     }
   }
+  
+  
+  
+// SURVEY LISTING TABLE PAGE
+
+.survey-listing-title {
+  position: relative;
+  display: block;
+  margin: 3rem auto 0 auto;
+  text-align: center;
+  font-size: 3rem;
+  color: #00B479;
+}
+
+.survey-listing-table {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+  .survey-listing-table th {
+    font-size: 1rem;
+    padding: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .survey-listing-table td {
+    font-size: 0.7rem;
+    padding: 0.5rem;
+    
+    & a {
+      display: inline-block;
+      background-color: #3F464D;
+      color: #FBFBFB;
+      padding: 0.5rem 0.7rem;
+      font-size: 0.7rem;
+      text-decoration: none;
+      
+      &:hover,
+      &:focus {
+        background-color: #00B479;
+      }
+    }
+  }
+  
+    .survey-listing-table-body-description {
+      max-width: 20rem;
+      word-wrap: break-word;
+    }
+  
+  .survey-listing-table-body-rows:not(:last-child) {
+    border-bottom: 1px solid black;
+  }
+  
+  
+  
+// SHOW SURVEY PAGE
+
+.survey-show-container {
+  position: relative;
+  margin: 0 auto;
+  width: 30rem;
+}
+
+  .survey-show-author-container {
+    position: relative;
+    display: block;
+  }
+  
+    .survey-show-author-text {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .survey-show-author-description {
+      position: relative;
+      display: inline-block;
+    }
+    
+  .survey-show-title-container {
+    position: relative;
+    display: block;
+  }
+  
+    .survey-show-title-text {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .survey-show-title-description {
+      position: relative;
+      display: inline-block;
+    }
+    
+  .survey-show-description-container {
+    position: relative;
+    display: block;
+  }
+  
+    .survey-show-description-text {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .survey-show-description-description {
+      position: relative;
+      display: inline-block;
+    }
+    
+  .survey-show-published-container {
+    position: relative;
+    display: block;
+  }
+  
+    .survey-show-published-text {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .survey-show-published-description {
+      position: relative;
+      display: inline-block;
+    }

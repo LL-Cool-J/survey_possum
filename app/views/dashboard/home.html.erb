@@ -1,4 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'New Survey', new_survey_path %>
-<%= link_to 'My Surveys', surveys_path %>
+<div class="home-page">
+  <%= link_to 'New Survey', new_survey_path, class: "home-page-new-survey-link" %>
+  <%= link_to 'My Surveys', surveys_path, class: "home-page-my-surveys-link" %>
+</div>

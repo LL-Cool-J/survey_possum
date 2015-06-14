@@ -1,56 +1,57 @@
 <p id="notice"><%= notice %></p>
 
-
-<p>
-  <strong>Author:</strong>
-  <%= @survey.author_id %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @survey.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @survey.description %>
-</p>
-
-<p>
-  <strong>Published?:</strong>
-  <%= @survey.published %>
-</p>
-
-<br>
-
-<%= form_for(@submission) do |f| %>
-<%= f.hidden_field :survey_id, :value => @survey.id %>
-  <% @questions.each do |question| %>
-    <div><%= "*" if question.required %><%= question.order_number %>. <%= question.question_text %></div>
-    <% if question.question_info %>
-      <div><%= question.question_info %></div>
-    <% end %>
-      <%= f.fields_for :answers do |ff| %>
-        <%= ff.hidden_field :question_id, :value => question.id %>
-        <% if question.question_type == "Text - Short" %>
-          <div><%= ff.text_field :response %></div>
-        <% elsif question.question_type == "Text - Long" %>
-          <div><%= ff.text_area :response %></div>
-        <% elsif question.question_type == "Yes or No" %>
-          <div><%= ff.radio_button :response, true %>
-          <%= ff.label :response, 'Yes', :value => true %>
-          <%= ff.radio_button :response, false%>
-          <%= ff.label :response, 'No', :value => false %></div>
-        <% else %>
-          <div><%= ff.check_box :response %></div>
-        <% end %>
+<div class="survey-show-container">
+  <div class="survey-show-author-container">
+    <div class="survey-show-author-text">Author:</div>
+    <div class="survey-show-author-description"><%= @survey.author_id %></div>
+  </div>
+  
+  <div class="survey-show-title-container">
+    <div class="survey-show-title-text">Title:</div>
+    <div class="survey-show-title-description"><%= @survey.title %></div>
+  </div>
+  
+  <div class="survey-show-description-container">
+    <div class="survey-show-description-text">Description:</div>
+    <div class="survey-show-description-description"><%= @survey.description %></div>
+  </div>
+  
+  <div class="survey-show-published-container">
+    <div class="survey-show-published-text">Published?:</div>
+    <div class="survey-show-published-description"><%= @survey.published %></div>
+  </div>
+  
+  <br>
+  
+  <%= form_for(@submission) do |f| %>
+  <%= f.hidden_field :survey_id, :value => @survey.id %>
+    <% @questions.each do |question| %>
+      <div><%= "*" if question.required %><%= question.order_number %>. <%= question.question_text %></div>
+      <% if question.question_info %>
+        <div><%= question.question_info %></div>
       <% end %>
+        <%= f.fields_for :answers do |ff| %>
+          <%= ff.hidden_field :question_id, :value => question.id %>
+          <% if question.question_type == "Text - Short" %>
+            <div><%= ff.text_field :response %></div>
+          <% elsif question.question_type == "Text - Long" %>
+            <div><%= ff.text_area :response %></div>
+          <% elsif question.question_type == "Yes or No" %>
+            <div><%= ff.radio_button :response, true %>
+            <%= ff.label :response, 'Yes', :value => true %>
+            <%= ff.radio_button :response, false%>
+            <%= ff.label :response, 'No', :value => false %></div>
+          <% else %>
+            <div><%= ff.check_box :response %></div>
+          <% end %>
+        <% end %>
+    <% end %>
+    <div><%= f.submit "Submit" %></div>
   <% end %>
-  <div><%= f.submit "Submit" %></div>
-<% end %>
-
-
-
-
-<%= link_to 'Edit', edit_survey_path(@survey) %> |
-<%= link_to 'Back', surveys_path %>
+  
+  
+  
+  
+  <%= link_to 'Edit', edit_survey_path(@survey) %> |
+  <%= link_to 'Back', surveys_path %>
+</div>
