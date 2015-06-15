@@ -233,6 +233,23 @@ i {
         font-size: 1rem;
       }
     }
+    
+    .survey-edit-add {
+      position: relative;
+      display: block;
+      border: 0;
+      margin: 0 auto;
+      background-color: $black-green;
+      padding: 0.5rem 2rem;
+      color: $off-white;
+      text-align: center;
+      font-size: 0.6rem;
+      
+      &:hover,
+      &:focus {
+        background-color: $green;
+      }
+    }
 
   .survey-edit-create-survey-button {
     position: relative;
