@@ -18,7 +18,7 @@
 $(function () {
   
   if ($('.survey-edit-page-title').length) {
-    var questions = $('#survey-questions').html();
+    var questions = $('#survey-question').html();
     
     
     
@@ -32,7 +32,7 @@ $(function () {
       questions = questions.replace(/\[[0-9]+\]/g, '[' + $('.survey-edit-question-container').length + ']')
         .replace(/_[0-9]+_/g, '_' + $('.survey-edit-question-container').length + '_');
       
-      $('.survey-edit-main-content-list').append('<li>' + questions + '</li>')
+      $('.unordered-list').append('<li>' + questions + '</li>')
     })
   }
   

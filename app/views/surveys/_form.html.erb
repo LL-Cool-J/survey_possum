@@ -35,11 +35,11 @@
       <ul class="survey-edit-main-content-list"></ul>
     </div>
     
-    
+    <ul class="unordered-list">
       <%= f.fields_for :questions do |ff| %>
       
 
-      
+      <li>
         <div class="survey-edit-question-container">
           <div class="field survey-edit-question-text-container">
             <div class="survey-edit-question-text-title">
@@ -76,10 +76,50 @@
           </div>
           
         </div>
+      </li>
         
-
+              <script type="text/html" id="survey-question">
+      
+              <div class="survey-edit-question-container">
+                <div class="field survey-edit-question-text-container">
+                  <div class="survey-edit-question-text-title">
+                    Question <%= ff.index + 1 %>
+                    <%= ff.hidden_field :order_number, :value => (ff.index + 1)  %>
+                  </div>
+                  <div class="field survey-edit-question-input">
+                    <%= ff.text_field :question_text %>
+                  </div>
+                </div>
+                <div class="field survey-edit-question-description-container">
+                  <div class="survey-edit-question-description-text">
+                    <%= ff.label :description %> (optional)<br>
+                  </div>
+                  <div class="survey-edit-question-description-input">
+                    <%= ff.text_area :question_info %>
+                  </div>
+                </div>
+                <div class="field survey-edit-question-type-container">
+                  <div class="survey-edit-question-type-text">
+                    <%= ff.label :question_type %><br>
+                  </div>
+                  <div class="survey-edit-question-type-dropdown">
+                    <%= ff.select :question_type, options_for_select(["", "Text - Short", "Text - Long", "Yes or No", "Checkbox"]) %>
+                  </div>
+                </div>
+                <div class="field survey-edit-question-required-container">
+                  <%= ff.label :required? %>
+                  <%= ff.check_box :required %>
+                </div>
+                <div class="field survey-edit-question-delete-container">
+                  <%= ff.label :_destroy, "Delete" %>
+                  <%= ff.check_box :_destroy %>
+                </div>
+              </div>
+      
+            </script>
         
         <% end %>
+        </ul>
         <button class="survey-edit-add">Add Question</button>
         
       
@@ -93,3 +133,4 @@
   </div>
 <% end %>
 
+      
