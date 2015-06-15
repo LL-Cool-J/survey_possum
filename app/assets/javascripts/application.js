@@ -14,3 +14,15 @@
 //= require jquery_ujs
 
 //= require_tree .
+
+$(function () {
+  
+  if ($('.survey-edit-page-title').length) {
+    console.log('hi');
+  }
+  
+  
+  
+  
+  
+});
