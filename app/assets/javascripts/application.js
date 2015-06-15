@@ -21,6 +21,13 @@ $(function () {
     var temp = $('#survey-question').html();
     
     $('.survey-edit-main-content-list').append('<li>' + temp + '</li>')
+    
+    $('body').on('click', '.survey-edit-add', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      $('.survey-edit-main-content-list').append('<li>' + temp + '</li>')
+    })
   }
   
   
