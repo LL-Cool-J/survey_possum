@@ -15,6 +15,10 @@ class Survey < ActiveRecord::Base
     self.questions.select {|q| q.required == true}
   end
 
+  def check_if_submissions?
+    self.submissions.count != 0 ? true : false
+  end
+
   def publish!
     self.published = true
   end
