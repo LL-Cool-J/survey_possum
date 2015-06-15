@@ -18,7 +18,9 @@
 $(function () {
   
   if ($('.survey-edit-page-title').length) {
-    console.log('hi');
+    var temp = $('#survey-question').html();
+    
+    $('.survey-edit-main-content-list').append('<li>' + temp + '</li>')
   }
   
   
