@@ -3,7 +3,7 @@ class SurveysController < ApplicationController
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
   before_action :check_author, only: [:edit, :update, :destroy]
   before_action :check_for_submissions, only: [:edit]
-  before_action :check_for_questions, only: [:create]
+  before_action :check_for_questions, only: [:update]
 
   # GET /surveys
   # GET /surveys.json
@@ -33,7 +33,7 @@ class SurveysController < ApplicationController
   # POST /surveys
   # POST /surveys.json
   def create
-
+    @survey = Survey.new(survey_params)
     respond_to do |format|
       if @survey.save
         format.html { redirect_to @survey, notice: 'Survey was successfully created.' }
@@ -92,11 +92,9 @@ class SurveysController < ApplicationController
     end
 
     def check_for_questions
-      @survey = Survey.new(survey_params)
-      if !(@survey.check_if_questions?) && @survey.published
+      if !(@survey.check_if_questions?) && survey_params[:published] == "true"
         @survey.unpublish!
-        @survey.save
-        redirect_to edit_survey_path(@survey), notice: "Surveys must have at least one question to be published."
+        redirect_to @survey, notice: "Surveys must have at least one question to be published."
       else
         return true
       end
