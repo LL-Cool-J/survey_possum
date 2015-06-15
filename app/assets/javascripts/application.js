@@ -21,11 +21,8 @@ $(function () {
   if ($('.survey-edit-title-text').length) {
     var questions = $('#survey-question').html();
     
-    
     $('.unordered-list').sortable();
     $('.unordered-list').disableSelection();
-    
-    //$('.survey-edit-main-content-list').append('<li>' + temp + '</li>')
     
     $('body').on('click', '.survey-edit-add', function (e) {
       e.preventDefault();
@@ -37,9 +34,5 @@ $(function () {
       $('.unordered-list').append('<li>' + questions + '</li>')
     })
   }
-  
-  
-  
-  
   
 });
