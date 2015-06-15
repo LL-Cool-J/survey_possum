@@ -68,6 +68,13 @@ body {
   background-color: $off-white;
 }
 
+body #notice {
+  color: red;
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+}
+
 // body {
 //   background-color: #fff;
 //   color: #333;
