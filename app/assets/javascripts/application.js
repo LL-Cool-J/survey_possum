@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 
 //= require_tree .
 
@@ -21,7 +22,8 @@ $(function () {
     var questions = $('#survey-question').html();
     
     
-    
+    $('.unordered-list').sortable();
+    $('.unordered-list').disableSelection();
     
     //$('.survey-edit-main-content-list').append('<li>' + temp + '</li>')
     
