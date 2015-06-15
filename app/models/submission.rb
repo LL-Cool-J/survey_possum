@@ -4,6 +4,7 @@ class Submission < ActiveRecord::Base
   has_many :answers
   accepts_nested_attributes_for :answers
 
+
   def check_required?
     required = self.survey.required_questions
     answers = []

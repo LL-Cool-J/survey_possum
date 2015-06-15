@@ -2,6 +2,7 @@ class SubmissionsController < ApplicationController
   before_action :logged_in?, except: [:create, :thankyou]
   before_action :set_submission, only: [:show, :edit, :update, :destroy]
   before_action :check_author, only: :show
+  # before_action :check_answers, only: :create
   # GET /submissions
   # GET /submissions.json
   def index
@@ -17,7 +18,7 @@ class SubmissionsController < ApplicationController
 
   # GET /submissions/new
   def new
-    @submission = Submission.new
+    @submission = Submission.new()
   end
 
   # # GET /submissions/1/edit
@@ -33,8 +34,7 @@ class SubmissionsController < ApplicationController
     elsif @submission.save
       redirect_to thankyou_submissions_path
     else
-      format.html { render :new }
-      format.json { render json: @submission.errors, status: :unprocessable_entity }
+      redirect_to @submission.survey, notice: "All required questions must be answered."
     end
   end
 
@@ -76,5 +76,16 @@ class SubmissionsController < ApplicationController
     def submission_params
       params.require(:submission).permit(:survey_id, answers_attributes: [:id, :question_id, :response])
     end
+
+    # def check_answers
+    #   @submission = Submission.new(submission_params)
+    #   if !(@submission.check_required?)
+    #     flash.now[:notice] = "Must answer all required questions."
+    #   else
+    #     return true
+    #   end
+    # end
+
+
 
 end
