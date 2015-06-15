@@ -17,7 +17,7 @@
 
 $(function () {
   
-  if ($('.survey-edit-page-title').length) {
+  if ($('.survey-edit-title-text').length) {
     var questions = $('#survey-question').html();
     
     
