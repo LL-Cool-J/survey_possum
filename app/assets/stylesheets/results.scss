@@ -1,0 +1,59 @@
+// Place all the styles related to the Results page here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.results-page-title {
+  position: relative;
+  display: block;
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 2rem 0;
+}
+
+.results-container {
+  position: relative;
+  margin: 0 10%;
+}
+
+  .results-data-container {
+    margin-bottom: 1rem;
+  }
+  
+    .results-data-title {
+      font-size: 1rem;
+    }
+    
+      .results-data-container th {
+        font-size: 0.8rem;
+        vertical-align: middle;
+        padding: 0 2rem;
+      }
+      
+      .results-data-container td {
+        font-size: 0.6rem;
+        padding: 0.2rem 0.5rem;
+      }
+      
+      .results-data-container tr:not(:last-child) {
+        border-bottom: 1px solid #3F464D;
+      }
+      
+      .results-data-table-sub-id {
+        text-align: center;
+        vertical-align: bottom;
+        
+        & a {
+          text-decoration: none;
+          font-size: 0.6rem;
+          display: inline-block;
+          background-color: #00AF6D;
+          color: #FBFBFB;
+          text-align: center;
+          width: 2rem;
+          
+          &:hover,
+          &:focus {
+            background-color: #3F464D;
+          }
+        }
+      }
