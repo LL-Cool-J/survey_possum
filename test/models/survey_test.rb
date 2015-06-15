@@ -10,4 +10,12 @@ class SurveyTest < ActiveSupport::TestCase
     assert_equal [@question, @question_four], @survey.required_questions
     assert_equal [], @survey_two.required_questions
   end
+
+  test "knows if it has questions" do
+    @survey = surveys(:one)
+    @new_survey = Survey.create!(title: @survey.title, author: authors(:one))
+
+    assert_equal true, @survey.check_if_questions?
+    assert_equal false, @new_survey.check_if_questions?
+  end
 end
