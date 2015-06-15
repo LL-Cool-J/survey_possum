@@ -13,28 +13,50 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Sign Up", class: "signup-button"%>
+  <div class="sign-up-page-container">
+    <div class="field sign-up-page-firstname">
+      <div class="sign-up-page-firstname-text">
+        <%= f.label :first_name %>
+      </div>
+      <div class="sign-up-page-firstname-input">
+        <%= f.text_field :first_name %>
+      </div>
+    </div>
+    <div class="field sign-up-page-lastname">
+      <div class="sign-up-page-lastname-text">
+        <%= f.label :last_name %>
+      </div>
+      <div class="sign-up-page-lastname-input">
+        <%= f.text_field :last_name %>
+      </div>
+    </div>
+    <div class="field sign-up-page-email">
+      <div class="sign-up-page-email-text">
+        <%= f.label :email %>
+      </div>
+      <div class="sign-up-page-email-input">
+        <%= f.text_field :email %>
+      </div>
+    </div>
+    <div class="field sign-up-page-password">
+      <div class="sign-up-page-password-text">
+        <%= f.label :password %>
+      </div>
+      <div class="sign-up-page-password-input">
+        <%= f.password_field :password %>
+      </div>
+    </div>
+    <div class="field sign-up-page-password">
+      <div class="sign-up-page-password-text">
+        <%= f.label :password_confirmation %>
+      </div>
+      <div class="sign-up-page-password-input">
+        <%= f.password_field :password_confirmation %>
+      </div>
+    </div>
+    <div class="actions">
+      <%= f.submit "Sign Up" %>
+    </div>
   </div>
 <% end %>
 </div>

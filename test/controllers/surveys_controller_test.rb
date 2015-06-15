@@ -6,6 +6,7 @@ class SurveysControllerTest < ActionController::TestCase
     @author = authors(:one)
     session[:author_id] = @author.id
     @question = questions(:one)
+    @new_survey = Survey.create(author_id: @author.id, title: "Title!", published: false)
   end
 
   test "should get index" do
@@ -22,7 +23,7 @@ class SurveysControllerTest < ActionController::TestCase
   test "should create survey" do
     assert_difference('Survey.count') do
       post :create, survey: { author_id: @author.id, description: @survey.description,
-          title: @survey.title, published: true}
+          title: @survey.title, published: false}
     end
 
     assert_redirected_to survey_path(assigns(:survey))
@@ -31,7 +32,7 @@ class SurveysControllerTest < ActionController::TestCase
   test "should create survey with questions" do
     assert_difference('Question.count') do
       post :create, survey: { author_id: @author.id, description: @survey.description,
-          title: @survey.title, published: true, questions_attributes:
+          title: @survey.title, published: false, questions_attributes:
           [question_text: @question.question_text, question_info: @question.question_info,
           question_type: @question.question_type, required: false, order_number: 1] }
     end
@@ -46,7 +47,7 @@ class SurveysControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-    get :edit, id: @survey
+    get :edit, id: @new_survey
     assert_response :success
   end
 

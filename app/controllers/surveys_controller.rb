@@ -2,6 +2,8 @@ class SurveysController < ApplicationController
   before_action :logged_in?, except: [:show]
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
   before_action :check_author, only: [:edit, :update, :destroy]
+  before_action :check_for_submissions, only: [:edit]
+  before_action :check_for_questions, only: [:update]
 
   # GET /surveys
   # GET /surveys.json
@@ -32,7 +34,6 @@ class SurveysController < ApplicationController
   # POST /surveys.json
   def create
     @survey = Survey.new(survey_params)
-
     respond_to do |format|
       if @survey.save
         format.html { redirect_to @survey, notice: 'Survey was successfully created.' }
@@ -80,6 +81,23 @@ class SurveysController < ApplicationController
       params.require(:survey).permit(:author_id, :title, :description, :published,
           questions_attributes: [:id, :question_text, :question_info, :question_type,
           :required, :order_number, :_destroy])
+    end
+
+    def check_for_submissions
+      if @survey.check_if_submissions?
+        redirect_to @survey, notice: "Survey cannot be edited. Answers have been submitted."
+      else
+        return true
+      end
+    end
+
+    def check_for_questions
+      if !(@survey.check_if_questions?) && survey_params[:published] == "true"
+        @survey.unpublish!
+        redirect_to @survey, notice: "Surveys must have at least one question to be published."
+      else
+        return true
+      end
     end
 
 end

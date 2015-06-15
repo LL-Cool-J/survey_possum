@@ -81,6 +81,11 @@ i {
   width: 30rem;
 }
 
+.survey-edit-question-container {
+  background-color: $pale-green;
+  margin-bottom: 1rem;
+}
+
   .survey-edit-author-container {
     position: relative;
     display: inline-block;
@@ -283,6 +288,23 @@ i {
       }
     }
 
+    .survey-edit-add {
+      position: relative;
+      display: block;
+      border: 0;
+      margin: 0 auto;
+      background-color: $black-green;
+      padding: 0.5rem 2rem;
+      color: $off-white;
+      text-align: center;
+      font-size: 0.6rem;
+
+      &:hover,
+      &:focus {
+        background-color: $green;
+      }
+    }
+
   .survey-edit-create-survey-button {
     position: relative;
     text-align: center;
@@ -308,7 +330,7 @@ i {
 .survey-listing-title {
   position: relative;
   display: block;
-  margin: 3rem auto 0 auto;
+  margin: 8rem auto 0 auto;
   text-align: center;
   font-size: 3rem;
   color: $green;
@@ -316,9 +338,9 @@ i {
 
 .survey-listing-table {
   position: absolute;
-  top: 50%;
+  top: 15rem;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
 }
 
   .survey-listing-table th {
@@ -361,7 +383,7 @@ i {
 
 .survey-show-container {
   position: relative;
-  margin: 2rem auto 0 auto;
+  margin: 8rem auto 0 auto;
   width: 30rem;
 }
 
@@ -456,6 +478,8 @@ i {
       }
 
       .survey-show-question-container {
+        width: 100%;
+
         & textarea {
           position: relative;
           font-size: 0.7rem;
