@@ -4,6 +4,7 @@ class SurveysController < ApplicationController
   before_action :check_author, only: [:edit, :update, :destroy]
   before_action :check_for_submissions, only: [:edit]
   before_action :check_for_questions, only: [:update]
+  before_action :check_published, only: :show
 
   # GET /surveys
   # GET /surveys.json
@@ -97,6 +98,12 @@ class SurveysController < ApplicationController
         redirect_to @survey, notice: "Surveys must have at least one question to be published."
       else
         return true
+      end
+    end
+
+    def check_published
+      if !(@survey.published) && !(session[:author_id])
+        redirect_to login_path, notice: "Please Login."
       end
     end
 
