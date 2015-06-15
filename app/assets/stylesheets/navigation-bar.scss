@@ -23,34 +23,20 @@
   }
 
   .logout-link {
+    position: absolute;
+    right: 0;
+    padding: 0.5rem;
     display: block;
     float: right;
     font-size: 0.75rem;
-  }
-
-  .navigation-bar-link-home {
-    position: relative;
-    top: 50%;
-    float: right;
-    transform: translateY(-50%);
-    display: inline;
-    margin: 0.5rem;
-    padding: 0.5rem 0;
     text-decoration: none;
-    background-color: $black-green;
-    color: $off-white;
-    width: 8rem;
-    text-align: center;
-    font-size: 1rem;
-
-    &:hover,
-    &:focus {
-      background-color: $off-white;
-      color: $black-green;
-    }
+    color: #797D85;
   }
+    .logout-link:hover {
+      color: #40464C;
+    }
 
-  .navigation-bar-link-new {
+  .navigation-bar a:not(.logout-link) {
     position: relative;
     top: 50%;
     float: right;

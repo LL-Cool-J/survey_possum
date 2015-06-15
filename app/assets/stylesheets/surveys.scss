@@ -12,11 +12,16 @@ input {
   border: .1rem solid #797D85;
 }
 
+i {
+  padding: .05rem;
+  margin-left: 0.09rem;
+}
+
 .survey-edit-page-title {
   position: relative;
   display: block;
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 5rem;
   padding: 1rem;
   font-size: 2rem;
   font-weight: 700;
@@ -24,7 +29,7 @@ input {
 
 .survey-edit-container {
   position: relative;
-  margin: 0 auto;
+  margin: 1rem auto;
   width: 30rem;
 }
 
