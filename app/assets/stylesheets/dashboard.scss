@@ -68,14 +68,34 @@
       font-size: 1rem;
     }
     
-  .login-page-button {
+  .login-page-login {
     position: relative;
     display: block;
     font-size: 1rem;
     border: 0;
     margin: 0 auto;
     padding: 0.5rem 0;
-    width: 8rem;
+    width: 10rem;
+    margin-bottom: 2rem;
+    background-color: $black-green;
+    color: $off-white;
+    
+    &:hover,
+    &:focus {
+      background-color: $off-white;
+      color: $black-green;
+    }
+  }
+  
+  .login-page-sign-up {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.5rem;
+    width: 10rem;
+    font-size: 1rem;
     background-color: $black-green;
     color: $off-white;
     

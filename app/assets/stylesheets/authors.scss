@@ -1,3 +1,143 @@
 // Place all the styles related to the Authors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'colors';
+
+.sign-up-page-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 4rem 2rem;
+  background-color: $pale-green;
+  min-width: 25rem;
+}
+
+  .sign-up-page-firstname {
+    position: relative;
+    display: block;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  
+    .sign-up-page-firstname-text {
+      position: relative;
+      display: inline-block;
+      width: 5rem;
+      
+      & label {
+        font-size: 1rem;
+      }
+    }
+    
+    .sign-up-page-firstname-input {
+      position: absolute;
+      right: 0;
+      display: inline-block;
+      
+      & input {
+        width: 10rem;
+        font-size: 1rem;
+      }
+    }
+    
+  .sign-up-page-lastname {
+    position: relative;
+    display: block;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  
+    .sign-up-page-lastname-text {
+      position: relative;
+      display: inline-block;
+      width: 5rem;
+      
+      & label {
+        font-size: 1rem;
+      }
+    }
+    
+    .sign-up-page-lastname-input {
+      position: absolute;
+      right: 0;
+      display: inline-block;
+      
+      & input {
+        width: 10rem;
+        font-size: 1rem;
+      }
+    }
+    
+  .sign-up-page-email {
+    position: relative;
+    display: block;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  
+    .sign-up-page-email-text {
+      position: relative;
+      display: inline-block;
+      width: 5rem;
+      
+      & label {
+        font-size: 1rem;
+      }
+    }
+    
+    .sign-up-page-email-input {
+      position: absolute;
+      right: 0;
+      display: inline-block;
+      
+      & input {
+        width: 10rem;
+        font-size: 1rem;
+      }
+    }
+    
+  .sign-up-page-password {
+    position: relative;
+    display: block;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  
+    .sign-up-page-password-text {
+      position: relative;
+      display: inline-block;
+      width: 5rem;
+      
+      & label {
+        font-size: 1rem;
+      }
+    }
+    
+    .sign-up-page-password-input {
+      position: absolute;
+      right: 0;
+      display: inline-block;
+      
+      & input {
+        width: 10rem;
+        font-size: 1rem;
+      }
+    }
+
+  .sign-up-page-container input[type="submit"] {
+    position: relative;
+    font-size: 1rem;
+    border: 0;
+    display: block;
+    margin: 0 auto;
+    padding: 0.5rem 2rem;
+    background-color: $dark-green;
+    color: $off-white;
+    
+    &:hover,
+    &:focus {
+      background-color: $black-green;
+    }
+  }

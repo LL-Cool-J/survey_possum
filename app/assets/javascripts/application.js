@@ -12,5 +12,27 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 
 //= require_tree .
+
+$(function () {
+  
+  if ($('.survey-edit-title-text').length) {
+    var questions = $('#survey-question').html();
+    
+    $('.unordered-list').sortable();
+    $('.unordered-list').disableSelection();
+    
+    $('body').on('click', '.survey-edit-add', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      questions = questions.replace(/\[[0-9]+\]/g, '[' + $('.survey-edit-question-container').length + ']')
+        .replace(/_[0-9]+_/g, '_' + $('.survey-edit-question-container').length + '_');
+      
+      $('.unordered-list').append('<li>' + questions + '</li>')
+    })
+  }
+  
+});

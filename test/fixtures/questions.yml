@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  survey: :one
   question_text: Why?
   question_info: Why not.
   question_type: Text - Long
@@ -8,8 +9,25 @@ one:
   order_number: 1
 
 two:
+  survey: :two
   question_text: Yes or no?
   question_info: Maybe.
   question_type: Yes or No
   required: false
+  order_number: 1
+
+three:
+  survey: :one
+  question_text: Yes or no?
+  question_info: Maybe.
+  question_type: Text - Short
+  required: true
   order_number: 2
+
+four:
+  survey: :one
+  question_text: ???
+  question_info: Maybe.
+  question_type: Text - Short
+  required: true
+  order_number: 3

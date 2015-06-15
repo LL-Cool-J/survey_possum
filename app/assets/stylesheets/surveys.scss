@@ -2,22 +2,88 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// CREATING SURVEY PAGE
+// SIGNUP PAGE
 
 @import 'colors';
+
+input {
+  line-height: 1.5rem;
+  font-size: 1rem;
+  width: 20rem;
+  border: 0.1rem solid #797D85;
+}
+
+label {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.signup-button {
+  position: relative;
+  left: 27%;
+  display: block;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.5rem 2rem;
+  margin-top: 1.5rem;
+  border: 0;
+  background-color: $green;
+  color: $off-white;
+  width: 8rem;
+}
+
+  .signup-button:hover {
+      background-color: $black-green;
+}
+
+i {
+  padding: .05rem;
+  margin-left: 0.09rem;
+}
+
+.container {
+  display: block;
+  margin: 0 auto;
+  width: 55%;
+}
+
+.page-title {
+  position: relative;
+  display: block;
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.field {
+  margin: 1rem;
+}
+
+// CREATING SURVEY PAGE
 
 .survey-edit-page-title {
   position: relative;
   display: block;
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 5rem;
+  padding: 1rem;
   font-size: 2rem;
+  font-weight: 700;
 }
 
 .survey-edit-container {
   position: relative;
-  margin: 0 auto;
+  margin: 1rem auto;
   width: 30rem;
+}
+
+.survey-edit-question-container {
+  background-color: $pale-green;
+  margin-bottom: 1rem;
 }
 
   .survey-edit-author-container {
@@ -26,87 +92,87 @@
     width: 100%;
     margin-bottom: 2rem;
   }
-  
+
     .survey-edit-author-text {
       position: relative;
       display: inline-block;
       width: 10rem;
-      
+
       & label {
         font-size: 1rem;
       }
     }
-    
+
     .survey-edit-author-input {
       position: relative;
       display: inline-block;
-      
+
       & input {
         font-size: 1rem;
         width: 15rem;
       }
     }
-    
+
   .survey-edit-title-container {
     position: relative;
     display: inline-block;
     width: 100%;
     margin-bottom: 2rem;
   }
-  
+
     .survey-edit-title-text {
       position: relative;
       display: inline-block;
       width: 10rem;
-      
+
       & label {
         font-size: 1rem;
       }
     }
-    
+
     .survey-edit-title-input {
       position: relative;
       display: inline-block;
-      
+
       & input {
         font-size: 1rem;
         width: 15rem;
       }
     }
-    
+
   .survey-edit-description-container {
     position: relative;
     display: inline-block;
     width: 100%;
     margin-bottom: 2rem;
   }
-  
+
     .survey-edit-description-text {
       position: relative;
       display: inline-block;
       width: 10rem;
-      
+
       & label {
         font-size: 1rem;
       }
     }
-    
+
     .survey-edit-description-input {
       position: relative;
       display: inline-block;
-      
+
       & textarea {
         font-size: 1rem;
         width: 15rem;
       }
     }
-    
+
   .survey-edit-question-published-container {
     position: relative;
     display: inline-block;
     width: 100%;
     margin-bottom: 2rem;
-    
+
     & label {
       position: relative;
       display: inline-block;
@@ -114,91 +180,92 @@
       font-size: 1rem;
     }
   }
-  
+
     .survey-edit-question-text-container {
       position: relative;
       display: inline-block;
       width: 100%;
       margin-bottom: 2rem;
     }
-  
+
       .survey-edit-question-text-title {
         position: relative;
         display: inline-block;
         width: 10rem;
         font-size: 1rem;
       }
-      
+
       .survey-edit-question-input {
         position: relative;
         display: inline-block;
-        
+
         & input {
           font-size: 1rem;
           width: 15rem;
         }
       }
-    
+
     .survey-edit-question-description-container {
       position: relative;
       display: inline-block;
       width: 100%;
       margin-bottom: 2rem;
     }
-  
+
       .survey-edit-question-description-text {
         position: relative;
         display: inline-block;
         width: 10rem;
-        
+
          & label {
         font-size: 1rem;
         }
       }
-      
+
       .survey-edit-question-description-input {
         position: relative;
         display: inline-block;
-        
+
         & textarea {
           font-size: 1rem;
           width: 15rem;
         }
       }
-      
+
     .survey-edit-question-type-container {
       position: relative;
       display: inline-block;
       width: 100%;
       margin-bottom: 2rem;
     }
-  
+
       .survey-edit-question-type-text {
         position: relative;
         display: inline-block;
         width: 10rem;
-        
+
          & label {
         font-size: 1rem;
         }
       }
-      
+
       .survey-edit-question-type-dropdown {
         position: relative;
         display: inline-block;
-        
+        border: 0.1rem solid #797D85;
+
         & select {
           font-size: 1rem;
           width: 15rem;
         }
       }
-      
+
     .survey-edit-question-required-container {
       position: relative;
       display: inline-block;
       width: 100%;
       margin-bottom: 2rem;
-      
+
       & label {
         position: relative;
         display: inline-block;
@@ -206,13 +273,13 @@
         font-size: 1rem;
       }
     }
-    
+
     .survey-edit-question-delete-container {
       position: relative;
       display: inline-block;
       width: 100%;
       margin-bottom: 2rem;
-      
+
       & label {
         position: relative;
         display: inline-block;
@@ -220,33 +287,50 @@
         font-size: 1rem;
       }
     }
-    
+
+    .survey-edit-add {
+      position: relative;
+      display: block;
+      border: 0;
+      margin: 0 auto;
+      background-color: $black-green;
+      padding: 0.5rem 2rem;
+      color: $off-white;
+      text-align: center;
+      font-size: 0.6rem;
+
+      &:hover,
+      &:focus {
+        background-color: $green;
+      }
+    }
+
   .survey-edit-create-survey-button {
     position: relative;
     text-align: center;
-    
+
     & input {
       font-size: 1rem;
       padding: 0.5rem 2rem;
       border: 0;
       background-color: $green;
       color: $off-white;
-      
+
       &:hover,
       &:focus {
         background-color: $black-green;
       }
     }
   }
-  
-  
-  
+
+
+
 // SURVEY LISTING TABLE PAGE
 
 .survey-listing-title {
   position: relative;
   display: block;
-  margin: 3rem auto 0 auto;
+  margin: 8rem auto 0 auto;
   text-align: center;
   font-size: 3rem;
   color: $green;
@@ -254,9 +338,9 @@
 
 .survey-listing-table {
   position: absolute;
-  top: 50%;
+  top: 15rem;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
 }
 
   .survey-listing-table th {
@@ -264,11 +348,11 @@
     padding: 0.5rem;
     font-weight: bold;
   }
-  
+
   .survey-listing-table td {
     font-size: 0.7rem;
     padding: 0.5rem;
-    
+
     & a {
       display: inline-block;
       background-color: $black-green;
@@ -276,30 +360,30 @@
       padding: 0.5rem 0.7rem;
       font-size: 0.7rem;
       text-decoration: none;
-      
+
       &:hover,
       &:focus {
         background-color: $green;
       }
     }
   }
-  
+
     .survey-listing-table-body-description {
       max-width: 20rem;
       word-wrap: break-word;
     }
-  
+
   .survey-listing-table-body-rows:not(:last-child) {
     border-bottom: 1px solid $black-green;
   }
-  
-  
-  
+
+
+
 // SHOW SURVEY PAGE
 
 .survey-show-container {
   position: relative;
-  margin: 2rem auto 0 auto;
+  margin: 8rem auto 0 auto;
   width: 30rem;
 }
 
@@ -307,129 +391,131 @@
     position: relative;
     display: block;
   }
-  
+
     .survey-show-author-text {
       position: relative;
       display: inline-block;
       font-size: 1rem;
     }
-    
+
     .survey-show-author-description {
       position: relative;
       display: inline-block;
       font-size: 1rem;
     }
-    
+
   .survey-show-title-container {
     position: relative;
     display: block;
   }
-  
+
     .survey-show-title-text {
       position: relative;
       display: inline-block;
       font-size: 1rem;
     }
-    
+
     .survey-show-title-description {
       position: relative;
       display: inline-block;
       font-size: 1rem;
     }
-    
+
   .survey-show-description-container {
     position: relative;
     display: block;
   }
-  
+
     .survey-show-description-text {
       position: relative;
       display: inline-block;
       font-size: 1rem;
     }
-    
+
     .survey-show-description-description {
       position: relative;
       display: inline-block;
       font-size: 1rem;
     }
-    
+
   .survey-show-published-container {
     position: relative;
     display: block;
   }
-  
+
     .survey-show-published-text {
       position: relative;
       display: inline-block;
       font-size: 1rem;
     }
-    
+
     .survey-show-published-description {
       position: relative;
       display: inline-block;
       font-size: 1rem;
     }
-    
+
     .survey-show-question-container {
       position: relative;
       display: inline-block;
       margin-bottom: 1rem;
-      
+
       & label {
         font-size: 0.8rem;
       }
     }
-    
+
       .survey-show-question-text {
         position: relative;
         display: inline-block;
         font-size: 1rem;
       }
-      
+
       .survey-show-question-description {
         position: relative;
         display: inline-block;
         font-size: 0.8rem;
       }
-      
+
       .survey-show-question-container {
+        width: 100%;
+
         & textarea {
           position: relative;
           font-size: 0.7rem;
           width: 100%;
           height: 4rem;
         }
-        
+
         & input[type="text"] {
           position: relative;
           font-size: 0.7rem;
           width: 100%;
         }
-        
+
         & input[type="radio"] {
           position: relative;
           font-size: 0.7rem;
         }
-        
+
         & input[type="checkbox"] {
           position: relative;
           font-size: 0.7rem;
         }
       }
-      
+
     .survey-show-submit-button {
       position: relative;
       display: block;
       text-align: center;
-      
+
       & input {
         background-color: $green;
         color: $off-white;
         font-size: 1rem;
         padding: 0.5rem 3rem;
         border: 0;
-        
+
         &:hover,
         &:focus {
           background-color: $black-green;
