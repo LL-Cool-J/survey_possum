@@ -413,6 +413,8 @@
       }
 
       .survey-show-question-container {
+        width: 100%;
+        
         & textarea {
           position: relative;
           font-size: 0.7rem;
