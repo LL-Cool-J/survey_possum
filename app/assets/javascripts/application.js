@@ -20,11 +20,14 @@ $(function () {
   if ($('.survey-edit-page-title').length) {
     var temp = $('#survey-question').html();
     
-    $('.survey-edit-main-content-list').append('<li>' + temp + '</li>')
+    //$('.survey-edit-main-content-list').append('<li>' + temp + '</li>')
     
     $('body').on('click', '.survey-edit-add', function (e) {
       e.preventDefault();
       e.stopPropagation();
+      
+      temp = temp.replace(/\[[0-9]+\]/g, '[' + $('.survey-edit-question-container').length + ']')
+        .replace(/_[0-9]+_/g, '_' + $('.survey-edit-question-container').length + '_');
       
       $('.survey-edit-main-content-list').append('<li>' + temp + '</li>')
     })
