@@ -39,7 +39,7 @@ class SurveysController < ApplicationController
         format.html { redirect_to @survey, notice: 'Survey was successfully created.' }
         format.json { render :show, status: :created, location: @survey }
       else
-        format.html { render :new }
+        format.html { render :edit }
         format.json { render json: @survey.errors, status: :unprocessable_entity }
       end
     end

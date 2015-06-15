@@ -40,7 +40,8 @@
           <div class="field survey-edit-question-text-container">
             <div class="survey-edit-question-text-title">
               Question <%= ff.index + 1 %>
-              <%= ff.hidden_field :order_number, :value => (ff.index + 1)  %>
+              <% number = ff.index + 1 %>
+              <%= ff.hidden_field :order_number, :value => number  %>
             </div>
             <div class="field survey-edit-question-input">
               <%= ff.text_field :question_text %>
@@ -79,8 +80,8 @@
               <div class="survey-edit-question-container">
                 <div class="field survey-edit-question-text-container">
                   <div class="survey-edit-question-text-title">
-                    Question <%= ff.index + 1 %>
-                    <%= ff.hidden_field :order_number, :value => (ff.index + 1)  %>
+                    Question <%= number + 1  %>
+                    <%= ff.hidden_field :order_number, :value => number + 1 %>
                   </div>
                   <div class="field survey-edit-question-input">
                     <%= ff.text_field :question_text %>
@@ -113,7 +114,7 @@
               </div>
 
             </script>
-
+            <% number += 1 %>
         <% end %>
         </ul>
         <button class="survey-edit-add">Add Question</button>

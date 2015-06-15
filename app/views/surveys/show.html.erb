@@ -34,9 +34,10 @@
 
   <%= form_for(@submission) do |f| %>
   <%= f.hidden_field :survey_id, :value => @survey.id %>
+  <% counter = 1 %>
     <% @questions.each do |question| %>
       <div class="survey-show-question-container">
-        <div class="survey-show-question-text"><%= "*" if question.required %><%= question.order_number %>. <%= question.question_text %></div>
+        <div class="survey-show-question-text"><%= "*" if question.required %><%= counter %>. <%= question.question_text %></div>
         <% if question.question_info %>
           <div class="survey-show-question-description"><%= question.question_info %></div>
         <% end %>
@@ -55,9 +56,10 @@
               <div><%= ff.check_box :response %></div>
             <% end %>
           <% end %>
+          <% counter += 1 %>
       </div>
     <% end %>
-    <div class="survey-show-submit-button"><%= f.submit "Submit" %></div>
+    <div class="survey-show-submit-button"><%= f.submit "Submit" if @survey.published %></div> 
   <% end %>
 <% if !(@survey.published) %>
   <%= form_for(@survey) do |f| %>
@@ -73,5 +75,5 @@
 <% end %>
 
   <%= link_to 'Edit', edit_survey_path(@survey) if @survey.author_id == session[:author_id] && !(@survey.published) %>
-  <%= link_to 'Back', surveys_path if @survey.author_id == session[:author_id] %>
+
 </div>
