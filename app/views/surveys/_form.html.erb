@@ -30,14 +30,14 @@
         <%= f.text_area :description %>
       </div>
     </div>
-    
+
     <div class="survey-edit-main-content">
       <ul class="survey-edit-main-content-list"></ul>
     </div>
-    
+
     <ul class="unordered-list">
       <%= f.fields_for :questions do |ff| %>
-      
+
 
       <li>
         <div class="survey-edit-question-container">
@@ -74,12 +74,12 @@
             <%= ff.label :_destroy, "Delete" %>
             <%= ff.check_box :_destroy %>
           </div>
-          
+
         </div>
       </li>
-        
+
               <script type="text/html" id="survey-question">
-      
+
               <div class="survey-edit-question-container">
                 <div class="field survey-edit-question-text-container">
                   <div class="survey-edit-question-text-title">
@@ -115,22 +115,16 @@
                   <%= ff.check_box :_destroy %>
                 </div>
               </div>
-      
+
             </script>
-        
+
         <% end %>
         </ul>
         <button class="survey-edit-add">Add Question</button>
-        
-      
-      <div class="field survey-edit-question-published-container">
-        <%= f.label :published, "Click here if you're ready to publish this survey." %>
-        <%= f.check_box :published %>
-      </div>
+
+      <br>
       <div class="survey-edit-create-survey-button">
-        <%= f.submit %>
+        <%= f.submit "Preview Survey" %>
       </div>
   </div>
 <% end %>
-
-      

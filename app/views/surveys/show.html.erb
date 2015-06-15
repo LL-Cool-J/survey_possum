@@ -59,9 +59,18 @@
     <% end %>
     <div class="survey-show-submit-button"><%= f.submit "Submit" %></div>
   <% end %>
+<% if !(@survey.published) %>
+  <%= form_for(@survey) do |f| %>
+    <div class="field survey-edit-question-published-container">
+      <%= f.label :published, "Click here if you're ready to publish this survey." %>
+      <%= f.hidden_field :published, :value => true %>
+    </div>
 
-
-
+    <div class="survey-edit-create-survey-button">
+      <%= f.submit "Publish!" %>
+    </div>
+  <% end %>
+<% end %>
 
   <%= link_to 'Edit', edit_survey_path(@survey) if @survey.author_id == session[:author_id] && !(@survey.published) %>
   <%= link_to 'Back', surveys_path if @survey.author_id == session[:author_id] %>
