@@ -11,7 +11,7 @@
   transform: translate(-50%, -50%);
   padding: 4rem 2rem;
   background-color: $pale-green;
-  min-width: 20rem;
+  min-width: 25rem;
 }
 
   .sign-up-page-firstname {
@@ -129,4 +129,15 @@
   .sign-up-page-container input[type="submit"] {
     position: relative;
     font-size: 1rem;
+    border: 0;
+    display: block;
+    margin: 0 auto;
+    padding: 0.5rem 2rem;
+    background-color: $dark-green;
+    color: $off-white;
+    
+    &:hover,
+    &:focus {
+      background-color: $black-green;
+    }
   }
