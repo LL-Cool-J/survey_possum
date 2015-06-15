@@ -4,6 +4,8 @@
 
 // CREATING SURVEY PAGE
 
+@import 'colors';
+
 .survey-edit-page-title {
   position: relative;
   display: block;
@@ -227,12 +229,12 @@
       font-size: 1rem;
       padding: 0.5rem 2rem;
       border: 0;
-      background-color: #00B479;
-      color: #FBFBFB;
+      background-color: $green;
+      color: $off-white;
       
       &:hover,
       &:focus {
-        background-color: #3F464D;
+        background-color: $black-green;
       }
     }
   }
@@ -247,7 +249,7 @@
   margin: 3rem auto 0 auto;
   text-align: center;
   font-size: 3rem;
-  color: #00B479;
+  color: $green;
 }
 
 .survey-listing-table {
@@ -269,15 +271,15 @@
     
     & a {
       display: inline-block;
-      background-color: #3F464D;
-      color: #FBFBFB;
+      background-color: $black-green;
+      color: $off-white;
       padding: 0.5rem 0.7rem;
       font-size: 0.7rem;
       text-decoration: none;
       
       &:hover,
       &:focus {
-        background-color: #00B479;
+        background-color: $green;
       }
     }
   }
@@ -288,7 +290,7 @@
     }
   
   .survey-listing-table-body-rows:not(:last-child) {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $black-green;
   }
   
   
@@ -422,15 +424,15 @@
       text-align: center;
       
       & input {
-        background-color: #00BE7B;
-        color: #FBFBFB;
+        background-color: $green;
+        color: $off-white;
         font-size: 1rem;
         padding: 0.5rem 3rem;
         border: 0;
         
         &:hover,
         &:focus {
-          background-color: #3F464D;
+          background-color: $black-green;
         }
       }
     }

@@ -55,6 +55,8 @@ table {
 
 /* DEFAULTS */
 
+@import 'colors';
+
 body * {
   box-sizing: border-box;
   font-size: 62.5%;
@@ -63,7 +65,7 @@ body * {
 }
 
 body {
-  background-color: #FBFBFB;
+  background-color: $off-white;
 }
 
 // body {

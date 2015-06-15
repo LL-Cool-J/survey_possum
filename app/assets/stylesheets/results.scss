@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'colors';
+
 .results-page-title {
   position: relative;
   display: block;
@@ -35,7 +37,7 @@
       }
       
       .results-data-container tr:not(:last-child) {
-        border-bottom: 1px solid #3F464D;
+        border-bottom: 1px solid $black-green;
       }
       
       .results-data-table-sub-id {
@@ -46,14 +48,14 @@
           text-decoration: none;
           font-size: 0.6rem;
           display: inline-block;
-          background-color: #00AF6D;
-          color: #FBFBFB;
+          background-color: $dark-green;
+          color: $off-white;
           text-align: center;
           width: 2rem;
           
           &:hover,
           &:focus {
-            background-color: #3F464D;
+            background-color: $black-green;
           }
         }
       }

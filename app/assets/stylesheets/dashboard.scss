@@ -4,13 +4,15 @@
 
 //Login Page
 
+@import 'colors';
+
 .login-page-container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 4rem 2rem;
-  background-color: #97D6B9;
+  background-color: $pale-green;
   min-width: 20rem;
 }
 
@@ -74,13 +76,13 @@
     margin: 0 auto;
     padding: 0.5rem 0;
     width: 8rem;
-    background-color: #3F464D;
-    color: #FBFBFB;
+    background-color: $black-green;
+    color: $off-white;
     
     &:hover,
     &:focus {
-      background-color: #FBFBFB;
-      color: #3F464D;
+      background-color: $off-white;
+      color: $black-green;
     }
   }
   
@@ -92,7 +94,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 3rem 2rem;
-  background-color: #96D6B8;
+  background-color: $pale-green;
   width: 15rem;
 }
 
@@ -104,13 +106,13 @@
     font-size: 1rem;
     padding: 0.5rem 0;
     width: 10rem;
-    background-color: #3F464D;
-    color: #FBFBFB;
+    background-color: $black-green;
+    color: $off-white;
     margin: 0 auto 2rem auto;
     
     &:hover,
     &:focus {
-      background-color: #00B479;
+      background-color: $green;
     }
   }
   
@@ -122,12 +124,12 @@
     font-size: 1rem;
     padding: 0.5rem 0;
     width: 10rem;
-    background-color: #3F464D;
-    color: #FBFBFB;
+    background-color: $black-green;
+    color: $off-white;
     margin: 0 auto;
     
     &:hover,
     &:focus {
-      background-color: #00B479;
+      background-color: $green;
     }
   }
