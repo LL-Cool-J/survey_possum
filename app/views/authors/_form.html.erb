@@ -1,3 +1,5 @@
+<div class="container">
+
 <%= form_for(@author) do |f| %>
   <% if @author.errors.any? %>
     <div id="error_explanation">
@@ -32,6 +34,7 @@
     <%= f.password_field :password_confirmation %>
   </div>
   <div class="actions">
-    <%= f.submit "Sign Up" %>
+    <%= f.submit "Sign Up", class: "signup-button"%>
   </div>
 <% end %>
+</div>
