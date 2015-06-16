@@ -20,39 +20,39 @@
   .results-data-container {
     margin-bottom: 1rem;
   }
-  
+
     .results-data-title {
       font-size: 1rem;
     }
-    
+
       .results-data-container th {
         font-size: 0.8rem;
         vertical-align: middle;
         padding: 0 2rem;
       }
-      
+
       .results-data-container td {
-        font-size: 0.6rem;
+        font-size: .8rem;
         padding: 0.2rem 0.5rem;
       }
-      
+
       .results-data-container tr:not(:last-child) {
         border-bottom: 1px solid $black-green;
       }
-      
+
       .results-data-table-sub-id {
         text-align: center;
         vertical-align: bottom;
-        
+
         & a {
           text-decoration: none;
-          font-size: 0.6rem;
+          font-size: 0.8rem;
           display: inline-block;
           background-color: $dark-green;
           color: $off-white;
           text-align: center;
           width: 2rem;
-          
+
           &:hover,
           &:focus {
             background-color: $black-green;

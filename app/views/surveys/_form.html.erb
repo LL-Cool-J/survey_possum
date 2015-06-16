@@ -15,7 +15,6 @@
 
     <%= f.hidden_field :author_id, :value => session[:author_id]%><br>
     <%= f.hidden_field :published, :value => false %>
-    <div class="upper-freeze">
 
     <div class="field survey-edit-title-container">
       <div class="survey-edit-title-text">
@@ -34,7 +33,6 @@
       </div>
     </div>
     </div>
-  </div>
     <ul class="unordered-list">
       <%= f.fields_for :questions do |ff| %>
 
