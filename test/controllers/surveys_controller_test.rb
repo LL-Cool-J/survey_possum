@@ -51,12 +51,23 @@ class SurveysControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should NOT get edit after submissions" do
+    get :edit, id: @survey
+    assert_redirected_to @survey
+  end
+
   test "should update survey and questions" do
     patch :update, id: @survey, survey: { author_id: @author.id, description: @survey.description,
         title: @survey.title, published: true,  questions_attributes:
         [question_text: @question.question_text, question_info: @question.question_info,
         question_type: @question.question_type, required: false, order_number: 1]}
     assert_redirected_to survey_path(assigns(:survey))
+  end
+
+  test "should not publish with no questions" do
+    patch :update, id: @new_survey, survey: { published: true }
+    assert_redirected_to @new_survey
+    assert_equal false, @new_survey.published
   end
 
   test "should destroy survey" do
