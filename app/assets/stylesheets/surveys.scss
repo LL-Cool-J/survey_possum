@@ -6,11 +6,24 @@
 
 @import 'colors';
 
-input {
-  line-height: 1.5rem;
+#notice {
+  font-family: Roboto, Helvetica, sans-serif;
+  line-height: 1.4;
+  font-weight: 700;
   font-size: 1rem;
-  width: 20rem;
-  border: 0.1rem solid #797D85;
+  text-align: center;
+  position: relative;
+  margin: 6rem auto;
+}
+
+#error_explanation {
+  font-family: Roboto, Helvetica, sans-serif;
+  line-height: 1.4;
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
 }
 
 label {
@@ -59,31 +72,25 @@ i {
   font-weight: 700;
 }
 
-.field {
-  margin: 1rem;
-}
-
 // CREATING SURVEY PAGE
 
 .survey-edit-page-title {
   position: relative;
+  top: 1rem;
   display: block;
   text-align: center;
-  margin-top: 5rem;
+  margin: 5rem auto 1.5rem;
   padding: 1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
 .survey-edit-container {
   position: relative;
-  margin: 1rem auto;
+  margin: 0 auto;
   width: 30rem;
-}
-
-.survey-edit-question-container {
   background-color: $pale-green;
-  margin-bottom: 1rem;
+  padding: 2rem 3rem;
 }
 
   .survey-edit-author-container {
@@ -109,7 +116,8 @@ i {
 
       & input {
         font-size: 1rem;
-        width: 15rem;
+        width: 70%;
+        border: 0.1rem solid #797D85;
       }
     }
 
@@ -117,7 +125,7 @@ i {
     position: relative;
     display: inline-block;
     width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
     .survey-edit-title-text {
@@ -132,11 +140,12 @@ i {
 
     .survey-edit-title-input {
       position: relative;
-      display: inline-block;
+      display: block;
 
       & input {
         font-size: 1rem;
-        width: 15rem;
+        width: 97%;
+        border: 0.1rem solid #797D85;
       }
     }
 
@@ -150,7 +159,7 @@ i {
     .survey-edit-description-text {
       position: relative;
       display: inline-block;
-      width: 10rem;
+      width: 97%;
 
       & label {
         font-size: 1rem;
@@ -162,8 +171,10 @@ i {
       display: inline-block;
 
       & textarea {
+        display: block;
         font-size: 1rem;
-        width: 15rem;
+        width: 23.2rem;
+        border: 0.1rem solid #797D85;
       }
     }
 
@@ -197,11 +208,12 @@ i {
 
       .survey-edit-question-input {
         position: relative;
-        display: inline-block;
+        display: block;
 
         & input {
           font-size: 1rem;
-          width: 15rem;
+          width: 97%;
+          border: 0.1rem solid #797D85;
         }
       }
 
@@ -215,7 +227,7 @@ i {
       .survey-edit-question-description-text {
         position: relative;
         display: inline-block;
-        width: 10rem;
+        width: 97%;
 
          & label {
         font-size: 1rem;
@@ -228,7 +240,8 @@ i {
 
         & textarea {
           font-size: 1rem;
-          width: 15rem;
+          width: 23.2rem;
+          border: 0.1rem solid #797D85;
         }
       }
 
@@ -249,46 +262,52 @@ i {
         }
       }
 
-      .survey-edit-question-type-dropdown {
+      select {
         position: relative;
         display: inline-block;
         border: 0.1rem solid #797D85;
+        line-height: 1.5rem;
+        width: 97%;
+        font-size: 1rem;
 
-        & select {
-          font-size: 1rem;
-          width: 15rem;
-        }
       }
 
-    .survey-edit-question-required-container {
+    .survey-edit-question-required-container { //same line with delete
       position: relative;
       display: inline-block;
-      width: 100%;
-      margin-bottom: 2rem;
+      float: left;
+      margin-bottom: 1rem;
 
       & label {
         position: relative;
         display: inline-block;
-        width: 10rem;
         font-size: 1rem;
+      }
+
+      & input {
+        font-size: 2rem;
       }
     }
 
     .survey-edit-question-delete-container {
       position: relative;
       display: inline-block;
-      width: 100%;
-      margin-bottom: 2rem;
+      float: right;
+      width: 30%;
+      margin-bottom: 1rem;
 
       & label {
-        position: relative;
         display: inline-block;
-        width: 10rem;
         font-size: 1rem;
+      }
+
+      & input {
+        font-size: 2rem;
       }
     }
 
     .survey-edit-add {
+      clear: both;
       position: relative;
       display: block;
       border: 0;
@@ -297,7 +316,9 @@ i {
       padding: 0.5rem 2rem;
       color: $off-white;
       text-align: center;
-      font-size: 0.6rem;
+      line-height: 1.5rem;
+      font-size: 0.7rem;
+      width: 9rem;
 
       &:hover,
       &:focus {
@@ -307,11 +328,13 @@ i {
 
   .survey-edit-create-survey-button {
     position: relative;
+    display: block;
     text-align: center;
+    margin: 0 auto;
 
     & input {
       font-size: 1rem;
-      padding: 0.5rem 2rem;
+      padding: 1.5rem;
       border: 0;
       background-color: $green;
       color: $off-white;
@@ -330,15 +353,17 @@ i {
 .survey-listing-title {
   position: relative;
   display: block;
-  margin: 8rem auto 0 auto;
+  margin-top: 6rem;
+  margin: auto;
   text-align: center;
-  font-size: 3rem;
-  color: $green;
+  font-size: 2rem;
+  font-weight: 700;
+  color: 40464C;
 }
 
 .survey-listing-table {
   position: absolute;
-  top: 15rem;
+  top: 12rem;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -491,16 +516,19 @@ i {
           position: relative;
           font-size: 0.7rem;
           width: 100%;
+          border: 0.1rem solid #797D85;
         }
 
         & input[type="radio"] {
           position: relative;
           font-size: 0.7rem;
+          border: 0.1rem solid #797D85;
         }
 
         & input[type="checkbox"] {
           position: relative;
           font-size: 0.7rem;
+          border: 0.1rem solid #797D85;
         }
       }
 

@@ -1,3 +1,5 @@
+<div class="survey-edit-container">
+
 <%= form_for(@survey) do |f| %>
   <% if @survey.errors.any? %>
     <div id="error_explanation">
@@ -11,9 +13,9 @@
     </div>
   <% end %>
 
-  <div class="survey-edit-container">
     <%= f.hidden_field :author_id, :value => session[:author_id]%><br>
     <%= f.hidden_field :published, :value => false %>
+
     <div class="field survey-edit-title-container">
       <div class="survey-edit-title-text">
         <%= f.label :title %><br>
@@ -21,7 +23,7 @@
       <div class="survey-edit-title-input">
         <%= f.text_field :title %>
       </div>
-    </div>
+
     <div class="field survey-edit-description-container">
       <div class="survey-edit-description-text">
         <%= f.label :survey_description %><br>
@@ -30,7 +32,7 @@
         <%= f.text_area :description %>
       </div>
     </div>
-
+    </div>
     <ul class="unordered-list">
       <%= f.fields_for :questions do |ff| %>
 
@@ -71,6 +73,7 @@
             <%= ff.label :_destroy, "Delete" %>
             <%= ff.check_box :_destroy %>
           </div>
+          <button class="survey-edit-add">Add Question</button>
 
         </div>
       </li>
@@ -107,9 +110,12 @@
                   <%= ff.label :required? %>
                   <%= ff.check_box :required %>
                 </div>
-                <div class="field survey-edit-question-delete-container">
-                  <%= ff.label :_destroy, "Delete" %>
-                  <%= ff.check_box :_destroy %>
+                <div class="add-del-option">
+                  <div class="field survey-edit-question-delete-container">
+                    <%= ff.label :_destroy, "Delete" %>
+                    <%= ff.check_box :_destroy %>
+                  </div>
+                  <button class="survey-edit-add">Add Question</button>
                 </div>
               </div>
 
@@ -117,7 +123,7 @@
             <% number += 1 %>
         <% end %>
         </ul>
-        <button class="survey-edit-add">Add Question</button>
+
 
       <br>
       <div class="survey-edit-create-survey-button">
