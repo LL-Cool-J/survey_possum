@@ -108,10 +108,9 @@
 //Home Page
 
 .home-page {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  display: block;
+  margin: 10rem auto 0 auto;
   padding: 3rem 2rem;
   background-color: $pale-green;
   width: 15rem;
