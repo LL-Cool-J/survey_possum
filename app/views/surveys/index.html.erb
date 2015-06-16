@@ -1,28 +1,35 @@
 <div id="notice"><%= notice %></div>
 
-<div class="survey-listing-title">Surveys</div>
+<% if @surveys.count != 0 %>
+  <div class="survey-listing-title">Surveys</div>
 
-<table class="survey-listing-table">
-  <thead>
-    <tr>
-      <th>Author</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @surveys.each do |survey| %>
-      <tr class="survey-listing-table-body-rows">
-        <td><%= "#{survey.author.first_name} #{survey.author.last_name}" %></td>
-        <td><%= survey.title %></td>
-        <td class="survey-listing-table-body-description"><%= survey.description %></td>
-        <td><%= link_to 'View Submissions', result_path(survey) %>
-        <td><%= link_to 'Show', survey %></td>
-        <td><%= link_to 'Edit', edit_survey_path(survey) %></td>
-        <td><%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <table class="survey-listing-table">
+    <thead>
+      <tr>
+        <th>Author</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Published?</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @surveys.each do |survey| %>
+        <tr class="survey-listing-table-body-rows">
+          <td><%= "#{survey.author.first_name} #{survey.author.last_name}" %></td>
+          <td><%= survey.title %></td>
+          <td class="survey-listing-table-body-description"><%= survey.description %></td>
+          <td><%= survey.published ? "Yes" : "No" %>
+          <td><%= link_to 'View Submissions', result_path(survey) %>
+          <td><%= link_to 'Show', survey %></td>
+          <td><%= link_to 'Edit', edit_survey_path(survey) %></td>
+          <td><%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="survey-listing-title">You haven't created any surveys yet!</div>
+  <div class="survey-listing-title">Click 'Create New' to get started.</div>
+<% end %>

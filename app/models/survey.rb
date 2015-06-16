@@ -23,11 +23,4 @@ class Survey < ActiveRecord::Base
     self.submissions.count != 0 ? true : false
   end
 
-  def publish!
-    self.published = true
-  end
-
-  def unpublish!
-    self.published = false
-  end
 end
