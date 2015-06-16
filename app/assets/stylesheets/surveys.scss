@@ -6,16 +6,6 @@
 
 @import 'colors';
 
-// #notice {
-//   font-family: Roboto, Helvetica, sans-serif;
-//   line-height: 1.4;
-//   font-weight: 700;
-//   font-size: 1rem;
-//   text-align: center;
-//   position: relative;
-//   margin: 6rem auto;
-// }
-
 #error_explanation {
   font-family: Roboto, Helvetica, sans-serif;
   line-height: 1.4;
@@ -75,63 +65,43 @@ i {
 // CREATING SURVEY PAGE
 
 .survey-edit-page-title {
-  position: relative;
-  top: 1rem;
+  position: fixed;
   display: block;
   text-align: center;
-  margin: 5rem auto 1.5rem;
+  width: 100%;
+  margin-top: 5rem;
   padding: 1rem;
   font-size: 1.5rem;
   font-weight: 700;
+  z-index: 1;
 }
 
 .survey-edit-container {
   position: relative;
   margin: 0 auto;
   width: 30rem;
-  background-color: $pale-green;
   padding: 2rem 3rem;
 }
 
-  .survey-edit-author-container {
+  .survey-edit-title-description {
+    position: fixed;
+    margin-top: 6rem;
+    z-index: 1;
+    background-color: $dark-green;
+    width: 24rem;
+    padding: 1rem 1rem;
+  }
+  
+  .survey-edit-title-container {
     position: relative;
     display: inline-block;
     width: 100%;
     margin-bottom: 2rem;
   }
 
-    .survey-edit-author-text {
-      position: relative;
-      display: inline-block;
-      width: 10rem;
-
-      & label {
-        font-size: 1rem;
-      }
-    }
-
-    .survey-edit-author-input {
-      position: relative;
-      display: inline-block;
-
-      & input {
-        font-size: 1rem;
-        width: 70%;
-        border: 0.1rem solid #797D85;
-      }
-    }
-
-  .survey-edit-title-container {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 1.5rem;
-  }
-
     .survey-edit-title-text {
       position: relative;
-      display: inline-block;
-      width: 10rem;
+      display: block;
 
       & label {
         font-size: 1rem;
@@ -144,8 +114,7 @@ i {
 
       & input {
         font-size: 1rem;
-        width: 97%;
-        border: 0.1rem solid #797D85;
+        width: 100%;
       }
     }
 
@@ -153,13 +122,11 @@ i {
     position: relative;
     display: inline-block;
     width: 100%;
-    margin-bottom: 2rem;
   }
 
     .survey-edit-description-text {
       position: relative;
-      display: inline-block;
-      width: 97%;
+      display: block;
 
       & label {
         font-size: 1rem;
@@ -168,15 +135,17 @@ i {
 
     .survey-edit-description-input {
       position: relative;
-      display: inline-block;
+      display: block;
 
       & textarea {
-        display: block;
         font-size: 1rem;
-        width: 23.2rem;
-        border: 0.1rem solid #797D85;
+        width: 100%;
       }
     }
+  
+  .unordered-list {
+    margin-top: 20rem;
+  }
 
   .survey-edit-question-published-container {
     position: relative;

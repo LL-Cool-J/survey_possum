@@ -15,23 +15,23 @@
 
     <%= f.hidden_field :author_id, :value => session[:author_id]%><br>
     <%= f.hidden_field :published, :value => false %>
-
-    <div class="field survey-edit-title-container">
-      <div class="survey-edit-title-text">
-        <%= f.label :title %><br>
+    <div class="survey-edit-title-description">
+      <div class="field survey-edit-title-container">
+        <div class="survey-edit-title-text">
+          <%= f.label :title %>
+        </div>
+        <div class="survey-edit-title-input">
+          <%= f.text_field :title %>
+        </div>
       </div>
-      <div class="survey-edit-title-input">
-        <%= f.text_field :title %>
+      <div class="field survey-edit-description-container">
+        <div class="survey-edit-description-text">
+          <%= f.label :survey_description %><br>
+        </div>
+        <div class="survey-edit-description-input">
+          <%= f.text_area :description %>
+        </div>
       </div>
-
-    <div class="field survey-edit-description-container">
-      <div class="survey-edit-description-text">
-        <%= f.label :survey_description %><br>
-      </div>
-      <div class="survey-edit-description-input">
-        <%= f.text_area :description %>
-      </div>
-    </div>
     </div>
     <ul class="unordered-list">
       <%= f.fields_for :questions do |ff| %>
@@ -73,8 +73,6 @@
             <%= ff.label :_destroy, "Delete" %>
             <%= ff.check_box :_destroy %>
           </div>
-          <button class="survey-edit-add">Add Question</button>
-
         </div>
       </li>
 
@@ -115,7 +113,7 @@
                     <%= ff.label :_destroy, "Delete" %>
                     <%= ff.check_box :_destroy %>
                   </div>
-                  <button class="survey-edit-add">Add Question</button>
+                  
                 </div>
               </div>
 
@@ -123,6 +121,7 @@
             <% number += 1 %>
         <% end %>
         </ul>
+        <button class="survey-edit-add">Add Question</button>
 
 
       <br>
