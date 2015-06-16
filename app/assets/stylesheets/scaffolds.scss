@@ -70,9 +70,11 @@ body {
 
 body #notice {
   color: red;
-  position: relative;
+  position: fixed;
+  display: block;
+  top: 5rem;
+  width: 100%;
   text-align: center;
-  font-weight: bold;
 }
 
 // body {
