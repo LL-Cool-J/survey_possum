@@ -7,13 +7,12 @@
 @import 'colors';
 
 .login-page-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  display: block;
+  margin: 10rem auto 0 auto;
   padding: 4rem 2rem;
   background-color: $pale-green;
-  min-width: 20rem;
+  width: 20rem;
 }
 
   .login-page-email {
