@@ -22,4 +22,6 @@ User: `ll@coolj.com`
 
 Password: `llcoolj`
 
-*(Created by Lindsey, Lee, and Joe...aka LL-Cool-J)*
+*(Created by Lindsey & Lee (Front End), and Joe (Rails)...aka LL-Cool-J)*
+
+######*Assignment from Week 6 of The Iron Yard's Ruby on Rails course (Durham)*
