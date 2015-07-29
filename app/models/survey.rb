@@ -5,8 +5,7 @@ class Survey < ActiveRecord::Base
   has_many :submissions
 
   accepts_nested_attributes_for :questions, allow_destroy: true,
-      reject_if: proc { |attributes| attributes['question_text'].blank? },
-      reject_if: proc { |attributes| attributes['question_type'].blank? }
+      reject_if: proc { |attributes| attributes['question_text'].blank? || attributes['question_type'].blank? }
 
   validates :author_id, presence: true
   validates :title, presence: true
